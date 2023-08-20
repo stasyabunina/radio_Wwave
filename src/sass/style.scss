@@ -1,0 +1,103 @@
+@import "normalize.css";
+@import "fonts";
+@import "var";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+label {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+body {
+  min-width: 320px;
+  font-family: "Muller", sans-serif;
+  font-weight: 400;
+  font-size: $fs;
+  line-height: $biggest_lh;
+  color: $black;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1310px;
+  padding: 0 100px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: flex;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.section-title {
+  font-size: $title_fs;
+  line-height: 48px;
+  font-weight: 400;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.stop-scroll {
+  overflow: hidden;
+}
+
+@import "any-hover";
+@import "header";
+@import "hero";
+@import "podcasts";
+@import "broadcasts";
+@import "guests";
+@import "playlists";
+@import "product";
+@import "about";
+@import "footer";
+@import "popup";

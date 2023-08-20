@@ -1,0 +1,260 @@
+.product {
+  padding: 93px 0 130px 0;
+  background-color: $light_black;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__preview {
+    max-width: 640px;
+    width: 100%;
+    height: auto;
+    padding-top: 7px;
+    position: relative;
+    margin-right: $margin;
+    display: flex;
+  }
+
+ &__img {
+    object-fit: contain;
+  }
+
+  &__preview {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(160 / 640 * 100%);
+      height: calc(160 / 562 * 100%);
+      background-image: url("img/product-new.svg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  &__top-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    max-width: 445px;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 48px;
+    position: relative;
+    color: $yellow;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -30px;
+      width: 100%;
+      height: 13px;
+      background-image: url("img/product-decoration.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    color: $white;
+    font-size: $small_fs;
+    font-weight: 400;
+    line-height: 29px;
+
+    &:first-of-type {
+      margin-bottom: 12px;
+    }
+
+    &:last-of-type {
+      margin-bottom: $margin;
+    }
+  }
+
+  &__price {
+    display: block;
+    margin-bottom: $margin;
+    color: $white;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+
+  &__btn {
+    padding: 23px 13px;
+    color: $yellow;
+    font-size: $fs;
+    font-weight: 500;
+    line-height: $lh;
+    border-radius: 100px;
+    border: solid 2px $yellow;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+
+    &:focus-visible {
+      color: $black;
+      background-color: $dark_yellow;
+      outline: none;
+    }
+
+    &:active {
+      color: $black;
+      background-color: $dark_yellow;
+      border-color: $dark_yellow;
+    }
+
+    &:active .product__btn-svg path:first-child {
+      fill: $black;
+    }
+
+    &:active .product__btn-svg path:last-child {
+      fill: $dark_yellow;
+    }
+  }
+
+  &__btn-svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+
+    path {
+      &:first-child {
+        transition: fill .2s ease-in-out;
+      }
+
+      &:last-child {
+        transition: fill .2s ease-in-out;
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .product {
+    padding: 94px 0 96px 0;
+
+    &__wrapper {
+      align-items: center;
+    }
+
+    &__preview {
+      padding-top: 0;
+      padding-bottom: 42px;
+
+      &::after {
+        top: -10px;
+        width: calc(100 / 397 * 100%);
+        height: calc(100 / 349 * 100%);
+        background-size: 100% 100%;
+      }
+    }
+
+    &__content {
+      max-width: 396px;
+    }
+
+    &__btn {
+      padding: 23px 12px;
+    }
+
+    .product__title {
+      &::after {
+        background-image: url("img/product-decoration-tablet.png");
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .product {
+    padding: 54px 0 94px 0;
+
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__preview {
+      max-width: 540px;
+      margin-right: 0;
+      margin-bottom: 50px;
+      padding-bottom: 0;
+
+      &::after {
+        top: 0;
+        width: calc(160 / 540 * 100%);
+        height: calc(160 / 474 * 100%);
+      }
+    }
+
+    &__content {
+      max-width: none;
+      flex-shrink: 1;
+    }
+
+    &__title {
+      &::after {
+        background-image: url("img/product-decoration-small-tablet.png");
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .product {
+    padding: 54px 0 54px 0;
+
+    &__title {
+      margin-bottom: 41px;
+      font-size: $small_title_fs;
+      line-height: $big_lh;
+    }
+
+    &__desc {
+      font-size: $smaller_fs;
+      line-height: 22px;
+    }
+
+    &__price {
+      margin-bottom: 18px;
+      font-size: $small_title_fs;
+      line-height: $big_lh;
+    }
+
+    &__btn {
+      padding: 13px 14px;
+      font-size: $small_fs;
+      line-height: $small_lh;
+    }
+
+    &__preview {
+      max-width: 256px;
+      margin-bottom: 37px;
+
+      &::after {
+        width: calc(62 / 256 * 100%);
+        height: calc(62 / 225 * 100%);
+      }
+    }
+
+    &__title {
+      &::after {
+        bottom: -23px;
+        background-image: url("img/product-decoration-mobile.png");
+      }
+    }
+
+    &__desc {
+      &:last-of-type {
+        margin-bottom: 13px;
+      }
+    }
+  }
+}

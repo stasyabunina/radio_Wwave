@@ -1,0 +1,281 @@
+@media (any-hover: hover) {
+  .pop-up {
+    &__close-btn {
+      &:hover .pop-up__close-btn-svg circle {
+        stroke: $blue;
+      }
+
+      &:hover .pop-up__close-btn-svg path {
+        stroke: $blue;
+      }
+    }
+  }
+
+  .header {
+    &__tablet-btn {
+      &:hover {
+        background-color: $black;
+        color: $white;
+      }
+    }
+
+    &__desktop-btn {
+      &:hover {
+        background-color: $black;
+        color: $white;
+      }
+    }
+
+    &__broadcast-btn {
+      &:hover .play-path {
+        fill: $blue;
+      }
+    }
+
+    &__broadcast-btn {
+      &:hover .pause-path {
+        fill: $blue;
+      }
+    }
+
+    &__ac-trigger {
+      &:hover .header__ac-svg {
+        color: $blue;
+      }
+    }
+  }
+
+  .search {
+    &__submit {
+      &:hover svg path {
+        stroke: $light_blue;
+      }
+    }
+
+    &__btn {
+      &:hover svg path {
+        stroke: $light_blue;
+      }
+    }
+  }
+
+  .hero {
+    &__btn {
+      &:hover {
+        background-color: $light_blue;
+      }
+    }
+  }
+
+  .secondary-broadcast {
+    &__button {
+      &:hover .play-path {
+        fill: $blue;
+      }
+
+      &:hover .pause-path {
+        fill: $blue;
+      }
+    }
+  }
+
+  .primary-broadcast {
+    &__button {
+      &:hover .play-path {
+        fill: $blue;
+      }
+
+      &:hover .pause-path {
+        fill: $blue;
+      }
+    }
+  }
+
+  .podcasts {
+    &__btn {
+      &:hover {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+  }
+
+  .podcast {
+    &__btn {
+      &:hover .podcast__btn-svg path {
+        fill: $blue;
+      }
+
+      &:hover .podcast__btn-svg circle {
+        stroke: $blue;
+      }
+
+      &:hover .pause-path {
+        fill: $blue;
+      }
+    }
+  }
+
+  .broadcast {
+    &:hover .broadcast__img {
+      opacity: 0.7;
+    }
+
+    &__img {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .choices__inner:hover {
+    background-color: $dark_white;
+    border-color: $dark_white;
+  }
+
+  .tab {
+    &__btn {
+      &:hover {
+        background-color: $light_blue;
+        color: $white;
+      }
+    }
+
+    &__socials-svg {
+      &:hover path {
+        fill: $blue;
+      }
+    }
+  }
+
+  .guests {
+    &__ac-trigger {
+      &:hover .guests__ac-name {
+        color: $light_blue;
+      }
+
+      &:hover .guests__ac-svg path {
+        stroke: $light_blue;
+      }
+
+      &:hover .guests__ac-svg circle {
+        stroke: $light_blue;
+      }
+    }
+  }
+
+  .playlist {
+    &__btn {
+      &:hover .playlist__btn-svg {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &:hover::before {
+        background-color: $black;
+        opacity: 0.8;
+      }
+
+      &:hover+.playlist__info {
+        background-color: $blue;
+        border-color: $blue;
+      }
+
+      &:hover+.playlist__info .playlist__name {
+        color: $white;
+      }
+
+      &:hover+.playlist__info .playlist__text {
+        color: $white;
+      }
+    }
+  }
+
+  .product {
+    &__btn {
+      &:hover {
+        color: $black;
+        background-color: $yellow;
+      }
+
+      &:hover .product__btn-svg path:first-child {
+        fill: $black;
+      }
+
+      &:hover .product__btn-svg path:last-child {
+        fill: $yellow;
+      }
+    }
+  }
+
+  .about {
+    &__input {
+      &:hover {
+        background-color: $light_black;
+      }
+    }
+  }
+
+  .footer {
+    &__right-link {
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    &__socials-svg {
+      &:hover path {
+        fill: $blue;
+      }
+    }
+  }
+
+  .nav-top {
+    &__link {
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  .nav-bottom {
+    &__link {
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  .nav-top-secondary {
+    &__link {
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  .playlists {
+    &__input {
+      &:hover~.playlists__visible-checkbox {
+        border-color: $blue;
+      }
+    }
+  }
+
+  .broadcast {
+    &__link {
+      &:hover .broadcast__more {
+        color: $blue;
+      }
+
+      &:hover .broadcast__svg path {
+        fill: $blue;
+      }
+
+      &:hover .broadcast__svg-wrapper {
+        margin-right: 0;
+        padding-left: 6px;
+      }
+    }
+  }
+}

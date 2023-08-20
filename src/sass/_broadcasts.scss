@@ -1,0 +1,509 @@
+.broadcasts {
+  padding: 94px 0;
+  background-color: $white;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__left {
+    flex: 0 0 255px;
+    margin-right: $margin;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 12px;
+  }
+
+  &__author {
+    margin-bottom: 8px;
+    display: block;
+    font-size: $small_fs;
+    line-height: $small_lh;
+    font-weight: 400;
+    color: $dark_gray;
+  }
+
+  &__right {
+    margin: 0;
+    padding: 0;
+    padding-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    list-style-type: none;
+  }
+
+  &__item {
+    width: calc(33.33% - 20px);
+    margin-right: $margin;
+    margin-bottom: $margin;
+    display: flex;
+
+    &:nth-last-child(-n+3) {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  &__archive-wrapper {
+    display: none;
+  }
+}
+
+.choices__list--dropdown .choices__item,
+.choices__list[aria-expanded] .choices__item {
+  font-weight: 400;
+  font-size: $small_fs;
+  line-height: $small_lh;
+  border-bottom: solid 1px $gray;
+}
+
+.choices__list--dropdown .choices__item--selectable,
+.choices__list[aria-expanded] .choices__item--selectable {
+  padding: 12px;
+}
+
+.choices__item--selectable {
+  font-weight: 400;
+  font-size: $small_fs;
+  line-height: $small_lh;
+}
+
+.choices__inner {
+  min-height: auto;
+  position: relative;
+  background-color: $light_gray;
+  border-color: $light_gray;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.is-focused .choices__inner {
+  border-color: $blue;
+}
+
+.choices__inner:active {
+  background-color: $gray;
+  border-color: $gray;
+}
+
+.is-open .choices__list--dropdown,
+.is-open .choices__list[aria-expanded] {
+  border-radius: 10px;
+}
+
+.is-open .choices__inner {
+  border-radius: 10px;
+}
+
+.is-flipped.is-open .choices__inner {
+  border-radius: 10px;
+}
+
+.is-open .choices__list--dropdown,
+.is-open .choices__list[aria-expanded] {
+  border-radius: 10px;
+}
+
+.choices__list--dropdown .choices__item--choice.is-selected {
+  display: none;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  padding-top: 18px;
+  top: 55%;
+  border-radius: 10px;
+}
+
+.is-flipped .choices__list--dropdown,
+.is-flipped .choices__list[aria-expanded] {
+  padding-top: 7px;
+  bottom: 45%;
+  border-radius: 10px;
+}
+
+.choices__list--single {
+  padding: 10px 11px 12px 11px;
+}
+
+.choices[data-type*=select-one] .choices__inner {
+  padding: 0;
+}
+
+.choices__item--choice {
+  color: $dark_gray;
+}
+
+.choices[data-type*=select-one]::after {
+  border: none;
+  width: 13px;
+  height: 8px;
+  right: 15px;
+  z-index: 20;
+  margin-top: 0;
+  transform: translateY(-50%);
+  background-image: url("img/arrow-up.svg");
+  background-repeat: no-repeat;
+}
+
+.choices[data-type*=select-one].is-open::after {
+  margin-top: 0;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+  background-color: $dark_white;
+  color: $black;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-focused {
+  background-color: $light_blue;
+  color: $black;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-active {
+  background-color: $light_gray;
+  color: $black;
+}
+
+.archive {
+  padding-top: 110px;
+  background-image: url("img/mic-desktop.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+
+  &__text {
+    margin: 0;
+    font-size: $small_fs;
+    line-height: $big_lh;
+    font-weight: 400;
+    color: $dark_gray;
+  }
+
+  &__btn {
+    margin-bottom: 12px;
+    padding: 12px 55px;
+    font-size: $small_fs;
+    line-height: $small_lh;
+    font-weight: 500;
+    border: 2px solid $black;
+    border-radius: $big_border_radius;
+  }
+}
+
+.broadcast {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &__preview {
+    width: 100%;
+    display: flex;
+  }
+
+  &__img {
+    width: 100%;
+    transition: opacity .2s ease-in-out;
+  }
+
+  &__info {
+    padding: 20px 16px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: $light_gray solid 1px;
+    border-top: none;
+    flex-grow: 1;
+  }
+
+  &__title-desc-wrapper {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 4px;
+    font-size: $fs;
+    font-weight: 500;
+    line-height: $lh;
+  }
+
+  &__desc {
+    margin: 0;
+    font-size: $very_small_fs;
+    line-height: $smallest_lh;
+    font-weight: 400;
+    color: $dark_gray;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    transition: background-color .2s ease-in-out;
+
+    &:focus-visible {
+      background-color: $light_blue;
+      outline: none;
+    }
+
+    &:focus-visible .broadcast__more {
+      color: $white;
+    }
+
+    &:focus-visible .broadcast__svg path {
+      fill: $white;
+    }
+
+    &:active .broadcast__svg-wrapper {
+      margin-right: 0;
+      padding-left: 6px;
+    }
+
+    &:active .broadcast__more {
+      color: $dark_blue;
+    }
+
+    &:active .broadcast__svg path {
+      fill: $dark_blue;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:focus-visible::before {
+      outline: $blue solid 1px;
+      outline-offset: 7px;
+    }
+
+    .broadcast__svg path {
+      transition: fill .2s ease-out;
+    }
+  }
+
+  &__svg-wrapper {
+    width: 36px;
+    display: flex;
+    overflow: hidden;
+    transition-property: margin-right, padding-left, margin-left;
+    transition-duration: .3s;
+  }
+
+  &__svg {
+    width: 30px;
+    margin-left: -6px;
+  }
+
+  &__more {
+    margin-right: 3px;
+    display: block;
+    font-size: $small_fs;
+    font-weight: 400;
+    font-style: italic;
+    line-height: $small_lh;
+    transition: color .2s ease-in-out;
+  }
+}
+
+@media (max-width: 1280px) {
+  .broadcasts {
+    padding: 93px 0 93px 0;
+
+    &__left {
+      justify-content: flex-start;
+    }
+
+    &__title-label-wrapper {
+      margin-bottom: 230px;
+    }
+
+    &__right {
+      padding-top: 15px;
+    }
+
+    &__item {
+      width: calc(50% - 15px);
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(odd) {
+        margin-right: $margin;
+      }
+
+      &:nth-last-child(-n+3) {
+        margin-bottom: $margin;
+      }
+
+      &:nth-last-child(-n+2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .archive {
+    &__btn {
+      padding: 10px 55px;
+    }
+  }
+
+  .broadcast {
+    &__info {
+      padding: 20px 14px 20px 14px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .broadcasts {
+    padding: 93px 0 29px 0;
+
+    &__wrapper {
+      padding-bottom: 58px;
+      flex-direction: column;
+    }
+
+    &__left {
+      margin-right: 0;
+      margin-bottom: 47px;
+      flex: 0 0 auto;
+    }
+
+    &__title-label-wrapper {
+      margin-bottom: 0;
+    }
+
+    &__right {
+      padding-top: 0;
+    }
+
+    &__archive-wrapper {
+      padding-top: 29px;
+      display: flex;
+      justify-content: center;
+      border-top: $light_gray 1px solid;
+    }
+  }
+
+  .choices {
+    max-width: 255px;
+  }
+
+  .archive {
+    display: none;
+
+    &__btn {
+      margin-bottom: 7px;
+    }
+  }
+
+  .tablet-archive {
+    padding-left: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url("img/mic-tablet.png");
+    background-repeat: no-repeat;
+    background-position: center left;
+
+    .archive__text {
+      max-width: 255px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .broadcasts {
+    padding: 53px 0 13px 0;
+
+    &__wrapper {
+      padding-bottom: 29px;
+    }
+
+    &__left {
+      margin-bottom: $margin;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: $small_title_fs;
+      line-height: $big_lh;
+    }
+
+    &__author {
+      margin-bottom: 6px;
+      font-size: $very_small_fs;
+      line-height: $smallest_lh;
+    }
+
+    &__archive-wrapper {
+      padding-top: 14px;
+    }
+  }
+
+  .broadcast {
+    min-height: 149px;
+
+    &__info {
+      padding: 11px 10px 12px 9px;
+    }
+
+    &__title-desc-wrapper {
+      margin-bottom: 18px;
+    }
+
+    &__title {
+      font-size: $very_small_fs;
+      line-height: $smallest_lh;
+    }
+
+    &__desc {
+      font-size: 9px;
+      line-height: 9px;
+    }
+
+    &__more {
+      font-size: $very_small_fs;
+      line-height: $smallest_lh;
+    }
+  }
+
+  .tablet-archive {
+    min-height: 137px;
+    flex-direction: column-reverse;
+    justify-content: center;
+    background-image: url("img/mic-mobile.png");
+  }
+
+  .archive {
+    &__btn {
+      margin-bottom: 0;
+      padding: 9px 30px;
+    }
+
+    &__text {
+      margin-bottom: 7px;
+      font-size: $smaller_fs;
+      line-height: 21px;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.hero {
+  background-color: $white;
+
+  &__wrapper {
+    padding: 38px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    margin-right: $margin;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 14px;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  &__desc {
+    max-width: 635px;
+    margin: 0;
+    margin-bottom: 45px;
+    font-size: $small_fs;
+    line-height: $big_lh;
+    font-weight: 400;
+  }
+
+  &__btn {
+    padding: 25px 54px;
+    background-color: $blue;
+    color: $white;
+    font-size: $fs;
+    line-height: $lh;
+    font-weight: 400;
+    border-radius: $border_radius;
+    transition: background-color .2s ease-in-out, border-style .2s ease-in-out;
+  }
+
+  &__btn {
+    &:focus-visible {
+      background-color: $light_blue;
+      outline: solid 2px $dark_blue;
+      outline: none;
+    }
+
+    &:active {
+      background-color: $dark_blue;
+      outline: none;
+    }
+  }
+
+  &__preview {
+    display: flex;
+  }
+
+  &__img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .hero {
+    &__wrapper {
+      padding: 88px 0 88px 0;
+    }
+
+    &__desc {
+      margin-bottom: 20px;
+    }
+
+    &__img {
+      max-width: 256px;
+    }
+
+    &__btn {
+      padding: 24px 54px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    &__wrapper {
+      padding: 92px 0 90px 0;
+    }
+
+    &__title {
+      margin-bottom: 15px;
+    }
+
+    &__preview {
+      display: none;
+    }
+
+    &__content {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    &__wrapper {
+      padding: 40px 0 40px 0;
+    }
+
+    &__title {
+      margin-bottom: 8px;
+      font-size: 32px;
+      line-height: $biggest_lh;
+    }
+
+    &__desc {
+      font-size: $smaller_fs;
+      line-height: 21px;
+    }
+
+    &__btn {
+      padding: 17px 45px;
+      font-size: $small_fs;
+      line-height: $small_lh;
+    }
+  }
+}

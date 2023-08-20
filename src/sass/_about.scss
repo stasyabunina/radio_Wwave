@@ -1,0 +1,437 @@
+.about {
+  padding: 98px 0 86px 0;
+  background-color: $black;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 11px;
+    color: $white;
+  }
+
+  &__text-wrapper {
+    margin-bottom: $margin;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 445px;
+      height: 290px;
+      background-image: url("img/about-deco.png");
+      background-repeat: no-repeat;
+      background-size: 445px 290px;
+      background-position: 100% 0;
+    }
+  }
+
+  &__text {
+    max-width: 634px;
+    margin: 0;
+    font-size: $fs;
+    font-weight: 400;
+    line-height: $biggest_lh;
+    color: $dark_gray;
+
+    &:first-of-type {
+      margin-bottom: 7px;
+      font-weight: 700;
+    }
+  }
+
+  &__slide-name {
+    margin: 0;
+    margin-bottom: 8px;
+    color: $white;
+    font-size: $fs;
+    font-weight: 500;
+    line-height: $lh;
+  }
+
+  &__slide-desc {
+    margin: 0;
+    color: $dark_gray;
+    font-size: $small_fs;
+    font-weight: 400;
+    line-height: $big_lh;
+  }
+
+  &__form {
+    max-width: 920px;
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__input {
+    padding: 24px 31px;
+    color: $white;
+    font-size: $fs;
+    font-weight: 400;
+    line-height: $lh;
+    border: solid 1px $white;
+    border-radius: $border_radius;
+    background-color: transparent;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+
+    &:focus-visible {
+      background-color: $light_black;
+      border-color: $light_blue;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $dark_gray;
+      font-family: inherit;
+      font-size: $fs;
+      font-weight: 400;
+      line-height: $lh;
+    }
+
+    &.is-invalid {
+      border: #D52B1E 1px solid;
+    }
+
+    &.is-valid {
+      border: #B8EC64 1px solid;
+    }
+  }
+
+  &__textarea-label {
+    width: 100%;
+    margin-bottom: $margin;
+  }
+
+  &__checkbox-label {
+    position: relative;
+
+    ~.is-label-invalid {
+      position: static;
+    }
+  }
+
+  &__textarea {
+    min-height: 150px;
+    padding: 30px 32px;
+    border-radius: $smaller_border_radius;
+    resize: none;
+  }
+
+  &__name-label {
+    display: inline-flex;
+    width: calc(50% - 18px);
+    margin-right: $margin;
+  }
+
+  &__email-label {
+    display: inline-flex;
+    width: calc(50% - 18px);
+    margin-bottom: $margin;
+  }
+
+  &__btn {
+    margin-bottom: 22px;
+    padding: 25px 54px;
+    color: $white;
+    font-size: $fs;
+    font-weight: 500;
+    line-height: $lh;
+    border-radius: $border_radius;
+    background-color: $blue;
+
+    &:focus-visible {
+      outline: none;
+      background-color: $light_blue;
+    }
+  }
+
+  &__checkbox {
+    &:focus-visible+.about__visible-checkbox {
+      outline: 2px solid $blue;
+      outline-offset: 1px;
+    }
+
+    &:checked~.about__visible-checkbox::before {
+      opacity: 1;
+    }
+  }
+
+  &__visible-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    border: 1px solid $white;
+    vertical-align: middle;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 7px;
+      height: 4px;
+      border-left: 2px solid $light_blue;
+      border-bottom: 2px solid $light_blue;
+      opacity: 0;
+      transform: translate(-50%, -60%) rotate(-45deg);
+      transition: opacity .2s ease-in-out;
+    }
+  }
+
+  &__checkbox-text {
+    color: $white;
+    display: inline-block;
+    font-size: $very_small_fs;
+    font-weight: 500;
+    line-height: $smallest_lh;
+  }
+
+  &__slider-wrapper {
+    position: relative;
+    margin-bottom: $margin;
+  }
+
+  &__swiper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__slide-preview {
+    display: flex;
+    margin-bottom: $margin;
+  }
+
+  &__slider-btn {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 29.5%;
+
+    &:focus-visible {
+      outline: 2px solid $blue;
+      outline-offset: 3px;
+    }
+  }
+}
+
+.is-label-invalid {
+  position: absolute;
+  top: 9px;
+  left: 32px;
+  font-size: $very_small_fs;
+  font-weight: 400;
+  line-height: $smallest_lh;
+}
+
+.about__slider-btn--next {
+  right: -75px;
+}
+
+.about__slider-btn--prev {
+  left: -75px;
+}
+
+@media (max-width: 1280px) {
+  .about {
+    padding: 94px 0 88px 0;
+
+    &__text-wrapper {
+      &::after {
+        width: 255px;
+        height: 255px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url("img/about-deco-tablet.png");
+        background-repeat: no-repeat;
+        background-size: 255px 255px;
+      }
+    }
+
+    &__text {
+      max-width: 539px;
+    }
+
+    &__text {
+      &:first-of-type {
+        margin-bottom: 4px;
+      }
+    }
+
+    &__slider-wrapper {
+      margin-bottom: 36px;
+    }
+
+    &__slider-btn {
+      top: 31.5%;
+    }
+
+    &__img {
+      width: 100%;
+    }
+  }
+
+  .about__slider-btn--next {
+    right: -65px;
+  }
+
+  .about__slider-btn--prev {
+    left: -65px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .about {
+    &__text-wrapper {
+      &::after {
+        width: 781px;
+        height: 112px;
+        position: relative;
+        top: auto;
+        transform: none;
+        left: -244px;
+        bottom: 0;
+        background-image: url("img/about-deco-small-tablet.png");
+        background-size: contain;
+      }
+    }
+
+    &__text {
+      &:last-of-type {
+        margin-bottom: $margin;
+      }
+    }
+
+    &__slider-wrapper {
+      margin-bottom: 31px;
+    }
+
+    &__slider-btn {
+      top: 30%;
+    }
+
+    &__form {
+      width: 100%;
+      max-width: none;
+    }
+
+    &__name-label {
+      display: flex;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: $margin;
+    }
+
+    &__email-label {
+      display: flex;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .about {
+    &__slider-btn {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .about {
+    padding: 56px 0 47px 0;
+
+    &__title {
+      font-size: $small_title_fs;
+      line-height: $big_lh;
+    }
+
+    &__text {
+      font-size: $smaller_fs;
+      line-height: 21px;
+
+      &:last-of-type {
+        line-height: 22px;
+      }
+    }
+
+    &__slide-preview {
+      margin-bottom: 12px;
+    }
+
+    &__slide-name {
+      max-width: 109px;
+      margin-bottom: 4px;
+      font-size: $smaller_fs;
+      line-height: 18px;
+    }
+
+    &__slide-desc {
+      font-size: $very_small_fs;
+      line-height: $small_lh;
+    }
+
+    &__text-wrapper {
+      &::after {
+        display: none;
+      }
+    }
+
+    &__img {
+      width: auto;
+    }
+
+    &__slider-wrapper {
+      margin-bottom: $margin;
+    }
+
+    &__textarea {
+      border-radius: 20px;
+    }
+
+    &__input {
+      padding: 16px 23px;
+      font-size: $small_fs;
+      line-height: $small_lh;
+
+      &::placeholder {
+        font-size: $small_fs;
+        line-height: $small_lh;
+      }
+    }
+
+    &__btn {
+      margin-bottom: 10px;
+      padding: 17px 44px;
+      font-size: $small_fs;
+      line-height: $small_lh;
+    }
+
+    &__checkbox-text {
+      font-size: 9px;
+      line-height: 9px;
+    }
+
+    &__visible-checkbox {
+      width: 13px;
+      height: 13px;
+    }
+
+    &__slide {
+      max-width: 113px;
+      width: auto;
+    }
+  }
+
+  .is-label-invalid {
+    top: 4px;
+    left: 24px;
+  }
+}

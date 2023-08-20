@@ -1,0 +1,249 @@
+span.pop-up__text {
+  display: block;
+}
+
+.pop-up {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+
+  &.pop-up--visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: 824px;
+    padding: 60px;
+    position: relative;
+    background-color: $black;
+    display: none;
+
+    &.pop-up__wrapper--visible {
+      display: block;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+    &:active .pop-up__close-btn-svg path {
+      stroke: $dark_blue;
+    }
+
+    &:active .pop-up__close-btn-svg circle {
+      stroke: $dark_blue;
+    }
+
+    &:focus-visible .pop-up__close-btn-svg path {
+      stroke: $light_blue;
+    }
+
+    &:focus-visible .pop-up__close-btn-svg circle {
+      stroke: $light_blue;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__close-btn-svg {
+    circle {
+      transition: stroke .2s ease-in-out;
+    }
+
+    path {
+      transition: stroke .2s ease-in-out;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 18px;
+    color: $white;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: $margin;
+    color: $white;
+    font-size: $fs;
+    font-weight: 400;
+    line-height: $lh;
+  }
+
+  &__link {
+    color: $blue;
+  }
+
+  &__form {
+    max-width: 526px;
+    margin-bottom: $margin;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__label {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 31px;
+    padding: 23px 32px;
+    font-size: $fs;
+    font-weight: 400;
+    line-height: $lh;
+    color: $white;
+    border: $white solid 1px;
+    border-radius: $border_radius;
+    outline: none;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $dark_gray;
+    }
+
+    &:focus-visible {
+      background-color: $light_black;
+      border-color: $light_blue;
+      outline: none;
+    }
+
+    &.is-invalid {
+      border: #D52B1E 1px solid;
+    }
+
+    &.is-valid {
+      border: #B8EC64 1px solid;
+    }
+  }
+
+  &__form-btn {
+    padding: 25px 54px;
+    color: $white;
+    background-color: $blue;
+    font-size: $fs;
+    font-weight: 500;
+    line-height: $lh;
+    border-radius: $border_radius;
+  }
+
+  &__socials-wrapper {
+    padding-top: 30px;
+    border-top: solid 1px rgba(230, 232, 236, 0.4);
+  }
+
+  &__socials-text {
+    margin-bottom: 32px;
+  }
+
+  &__socials {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+  }
+
+  &__socials-item {
+    &:not(:last-child) {
+      margin-right: 48px;
+    }
+  }
+
+  &__socials-link {
+    svg {
+      display: block;
+      width: 33.33px;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .pop-up {
+    &__wrapper {
+      padding: 60px 39px;
+      max-width: 539px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .pop-up {
+    &__wrapper {
+      padding: 42px 20px;
+      max-width: 256px;
+    }
+
+    &__close-btn {
+      width: 28px;
+      height: 28px;
+      top: 14px;
+      right: 20px;
+    }
+
+    &__title {
+      margin-bottom: 8px;
+      font-size: $small_title_fs;
+      line-height: $big_lh;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+      font-size: $very_small_fs;
+      line-height: 17px;
+    }
+
+    &__input {
+      margin-bottom: 20px;
+      padding: 11px 17px;
+      font-size: $small_fs;
+      line-height: $small_lh;
+    }
+
+    &__form-btn {
+      padding: 12px 56px;
+      font-size: $small_fs;
+      line-height: $small_lh;
+    }
+
+    &__socials-wrapper {
+      padding-top: 15px;
+    }
+
+    &__socials-text {
+      margin-bottom: 14px;
+    }
+
+    &__socials {
+      justify-content: space-between;
+    }
+
+    &__socials-item {
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+}
