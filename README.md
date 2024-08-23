@@ -1,10 +1,10 @@
-# SitDownPls – интернет-магазин мебели
+# Радио Wwave
 
 Проект, выполненный по макету курса [Skillbox](https://skillbox.ru/).
 
-[https://stasyabunina.github.io/sitDownPls/](https://stasyabunina.github.io/sitDownPls/)
+[https://stasyabunina.github.io/radio_Wwave/](https://stasyabunina.github.io/radio_Wwave/)
 
-![](sitdownpls.gif)
+![](radio_Wwave.gif)
 
 ## Для проекта использовалось следующее
 + [Gulp](https://gulpjs.com/) 
