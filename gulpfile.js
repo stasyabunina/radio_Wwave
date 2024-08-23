@@ -11,6 +11,7 @@ const browserSync = require('browser-sync').create();
 const uglify = require('gulp-uglify-es').default;
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
+const webpack = require('webpack-stream');
 const sass = require('gulp-sass')(require('sass'));
 
 const clean = () => {
@@ -49,6 +50,7 @@ const scripts = () => {
   return src(
     ['src/js/components/**.js', 'src/js/main.js'])
     .pipe(sourcemaps.init())
+    .pipe(webpack())
     .pipe(babel({
       presets: ['@babel/env']
     }))
@@ -82,7 +84,7 @@ const images = () => {
   ])
     .pipe(imagemin([
       imagemin.mozjpeg({ quality: 90, progressive: true }),
-      imagemin.optipng({optimizationLevel: 2}),
+      imagemin.optipng({ optimizationLevel: 2 }),
     ]))
     .pipe(dest('dist/img'))
 };
