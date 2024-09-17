@@ -1,22 +1,22 @@
 .footer {
-  padding: 90px 0 10px 0;
-  background-color: $light_black;
-  background-image: url("img/footer-deco.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+  padding: 90px 0 10px;
+  background-image: url("img/footer-deco.webp");
   background-position: 0 88%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: $light_black;
 
   &__wrapper {
-    margin-bottom: 94px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 94px;
   }
 
   &__left {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    flex-direction: column;
   }
 
   &__logo {
@@ -36,13 +36,13 @@
   }
 
   &__socials {
-    max-width: 400px;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-width: 400px;
   }
 
   &__socials-item {
@@ -76,26 +76,25 @@
   }
 
   &__right {
-    max-width: 446px;
+    columns: auto 3;
+    column-gap: 121px;
+    list-style-type: none;
+    vertical-align: middle;
     margin: 0;
     padding: 0;
-    list-style-type: none;
-    column-count: 3;
-    column-gap: 121px;
-    column-width: auto;
-    vertical-align: middle;
+    max-width: 446px;
   }
 
   &__right-item {
-    line-height: $small_lh;
     margin-bottom: 20px;
+    line-height: $small_lh;
   }
 
   &__right-link {
-    color: $white;
-    font-size: $small_fs;
     font-weight: 400;
+    font-size: $small_fs;
     line-height: $small_lh;
+    color: $white;
     transition: color .2s ease-in-out, background-color .2s ease-in-out;
 
     &:active {
@@ -103,20 +102,20 @@
     }
 
     &:focus-visible {
+      outline: none;
       color: $white;
       background-color: $light_blue;
-      outline: none;
     }
   }
 
   &__text {
     display: flex;
     align-items: center;
-    color: $dark_gray;
-    font-size: $small_fs;
-    font-weight: 400;
-    line-height: 17px;
     justify-content: center;
+    font-weight: 400;
+    font-size: $small_fs;
+    line-height: 17px;
+    color: $dark_gray;
   }
 
   &__mobile-right {
@@ -125,15 +124,15 @@
 }
 
 .reg {
-  padding: 0 5px 0 5px;
-  font-size: 85%;
-  bottom: 0;
   top: 0;
+  bottom: 0;
+  padding: 0 5px;
+  font-size: 85%;
 }
 
-@media (max-width: 1280px) {
+@media (width <= 1280px) {
   .footer {
-    background-image: url("img/footer-deco-tablet.png");
+    background-image: url("img/footer-deco-tablet.webp");
 
     &__logo {
       margin-bottom: 24px;
@@ -141,9 +140,9 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (width <= 1023px) {
   .footer {
-    background-image: url("img/footer-deco-small-tablet.png");
+    background-image: url("img/footer-deco-small-tablet.webp");
     background-position: 0 92.5%;
 
     &__wrapper {
@@ -169,8 +168,8 @@
     }
 
     &__right {
-      max-width: 542px;
       column-gap: 168px;
+      max-width: 542px;
     }
 
     &__right-item {
@@ -179,9 +178,9 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
   .footer {
-    padding: 53px 0 10px 0;
+    padding: 53px 0 10px;
 
     &__wrapper {
       margin-bottom: 57px;
@@ -205,17 +204,17 @@
     }
 
     &__mobile-right {
-      padding: 25px 0;
-      margin-bottom: 29px;
-      background-color: $black;
       display: block;
+      margin-bottom: 29px;
+      padding: 25px 0;
+      background-color: $black;
     }
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .footer {
-    background-image: url("img/footer-deco-mobile.png");
+    background-image: url("img/footer-deco-mobile.webp");
     background-position: 0 93.1%;
 
     &__right-link {
@@ -230,6 +229,6 @@
   }
 
   .reg {
-    padding: 0 4px 0 4px;
+    padding: 0 4px;
   }
 }

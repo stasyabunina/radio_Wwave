@@ -1,0 +1,17 @@
+mixin guestAcItem(type, guests)
+  li.guests__ac.ac
+    button.guests__ac-trigger.ac-trigger.btn(type='button')
+      h2.guests__ac-name.ac-header= type
+      svg.guests__ac-svg(width='42' height='42' viewBox='0 0 42 42' fill='none' xmlns='http://www.w3.org/2000/svg')
+        circle.guests__ac-svg-circle(cx='21' cy='21' r='20' stroke='#A1A6B4' stroke-width='2' fill='transparent')
+        path(d='M13 19L21 27L29 19' stroke='#A1A6B4' stroke-width='2' stroke-linecap='square')
+    .guests__ac-bottom.ac-panel
+      .guests__ac-bottom-wrapper
+        ul.guests__ac-list
+          each guest in guests
+            li.guests__ac-item
+              if guest.active
+                button.guests__ac-item-btn.btn.guests__ac-item-btn--active(type='button' data-path='two' data-scroll='first-guest')= guest.name
+              else
+                button.guests__ac-item-btn.btn(type='button' data-path='one' data-scroll='no-guest')= guest.name
+

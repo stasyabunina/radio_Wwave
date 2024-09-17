@@ -2,7 +2,7 @@ export default class Tabs {
   constructor(element) {
     this.element = element;
 
-    this.init()
+    this.init();
   }
 
   bindToDOM() {
@@ -21,12 +21,12 @@ export default class Tabs {
         const path = e.currentTarget.dataset.path;
 
         this.btns.forEach((btn) => {
-          btn.classList.remove('guests__ac-item-btn--active')
+          btn.classList.remove('guests__ac-item-btn--active');
         });
         e.currentTarget.classList.add('guests__ac-item-btn--active');
 
         this.items.forEach((item) => {
-          item.classList.remove('guests__tab--active')
+          item.classList.remove('guests__tab--active');
         });
         this.element.querySelector(`[data-target="${path}"]`).classList.add('guests__tab--active');
 
@@ -46,18 +46,18 @@ export default class Tabs {
 
     window.scrollBy({
       top: elementPosition,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   }
 
   getWindowWidth() {
     return Math.max(
-      document.body.scrollWidth,
-      document.documentElement.scrollWidth,
-      document.body.offsetWidth,
-      document.documentElement.offsetWidth,
-      document.body.clientWidth,
-      document.documentElement.clientWidth
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.body.clientWidth,
+        document.documentElement.clientWidth
     );
   }
 }

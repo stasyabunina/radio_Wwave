@@ -1,0 +1,26 @@
+section.product
+  .container
+    .product__wrapper
+      picture.product__preview
+        source(srcset='img/product-mobile.webp' media='(max-width: 576px)')
+        source(srcset='img/product-small-tablet.webp' media='(max-width: 1023px)')
+        source(srcset='img/product-tablet.webp' media='(max-width: 1280px)')
+        img.product__img(src='img/product.webp' alt='Радио W-Wave')
+      .product__content
+        h2.product__title.section-title Будь с нами на одной волне!
+        p.product__desc
+          | Друзья, рады представить вам продукт нашего производства! Да-да, несмотря
+          | на то, что мы только начали свой путь радиовещателей, нам хочется, чтобы вы могли как
+          | следует нас расслышать:)
+        p.product__desc
+          | Итак, встречайте! Портативный радиоприёмник-колонка W-Wave 1.0 xm.
+          | Тщательный
+          | подбор всех делатей, ручная сборка, качественный звук. Пока доступно только 60 штук
+          | в 3 цветах, но мы активно трудимся над новыми партиями и дизайном. Спешите
+          | приобрести!
+        span.product__price 2 800 ₽
+        button.product__btn.btn
+          svg.product__btn-svg(width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M10.5 20C16.0228 20 20.5 15.5228 20.5 9.99998C20.5 4.47714 16.0228 0 10.5 0C4.97724 0 0.5 4.47714 0.5 9.99998C0.5 15.5228 4.97724 20 10.5 20Z' fill='#F0D288')
+            path(d='M17.4383 4.54391L13.7294 3.17676L8.39558 10.8637L8.92665 7.3751L6.02046 5.68219L0.673828 12.1141C0.924147 13.3858 1.41008 14.5718 2.08375 15.6239L5.27361 11.7711L4.09981 16.2962L7.73695 17.6271L13.1407 9.8464L11.9568 14.2958L14.9032 16.0179L20.5579 10.3174C20.5591 10.2534 20.5598 10.1889 20.5598 10.1246C20.5598 8.78258 20.3016 7.50132 19.8328 6.32896L16.548 9.6538L17.4383 4.54391Z' fill='#121723')
+          span.product__btn-text Купить на Яндекс.Маркет

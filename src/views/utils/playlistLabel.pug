@@ -1,0 +1,5 @@
+mixin playlistLabel(genre, checked)
+  label.playlists__label
+    input.playlists__input.visually-hidden(type='radio' checked=checked name='genre')
+    span.playlists__visible-checkbox
+    span.playlists__input-text= genre

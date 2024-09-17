@@ -1,17 +1,17 @@
-import FormValidator from './FormValidator';
+import FormValidator from './FormValidator.js';
 
 export default class Modal {
   constructor(element, openBtn) {
     this.element = element;
     this.openPopUp = openBtn;
 
-    this.init()
+    this.init();
   }
 
   bindToDOM() {
     this.closePopUp = this.element.querySelector('.pop-up__close-btn');
     this.wrapper = this.element.querySelector('.pop-up__wrapper');
-    this.form = this.element.querySelector('.pop-up__form')
+    this.form = this.element.querySelector('.pop-up__form');
   }
 
   init() {
@@ -30,7 +30,7 @@ export default class Modal {
     this.closePopUp.addEventListener('click', () => {
       this.element.classList.remove('pop-up--visible');
       this.wrapper.classList.remove('pop-up__wrapper--visible');
-      document.body.classList.remove('stop-scroll')
+      document.body.classList.remove('stop-scroll');
     });
   }
 
@@ -60,8 +60,8 @@ export default class Modal {
             rule: 'maxLength',
             value: 30,
             errorMessage: 'Поле должно содержать максимум :value символов',
-          },
-        ]
+          }
+        ],
       },
       {
         id: '#password', rules: [
@@ -82,15 +82,15 @@ export default class Modal {
           {
             rule: 'password',
             errorMessage: 'Пароль должен содержать не меньше одной буквы или цифры',
-          },
-        ]
-      },
+          }
+        ],
+      }
     ];
 
     const onSuccess = () => {
       this.form.reset();
     };
 
-    new FormValidator(this.form, options, fields, onSuccess)
+    this.validator = new FormValidator(this.form, options, fields, onSuccess);
   }
 }

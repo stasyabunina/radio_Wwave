@@ -1,0 +1,168 @@
+include ../utils/playlistLabel
+include ../utils/playlist
+
+section#playlists.playlists
+  .container
+    .playlists__wrapper
+      .playlists__left
+        h2.playlists__title.section-title Плейлисты
+        span.playlists__radio-text Жанр
+        .playlists__radio-wrapper
+          -
+            const playlistLabels = [
+              {name: 'Постпанк', checked: true},
+              {name: 'Хардкор', checked: false},
+              {name: 'Панк-рок', checked: false},
+              {name: 'Рок', checked: false},
+              {name: 'Прогрессивный рок', checked: false},
+              {name: 'Электронная музыка', checked: false},
+              {name: 'Классическая музыка', checked: false},
+              {name: 'Звуки природы и шум города', checked: false},
+            ]
+          each playlistLabel in playlistLabels
+            +playlistLabel(playlistLabel.name, playlistLabel.checked)
+        .playlists__swiper.swiper
+          .playlists__swiper-wrapper.swiper-wrapper
+            -
+              const playlistBtns = [
+                {name: 'Постпанк', active: true},
+                {name: 'Хардкор', active: false},
+                {name: 'Панк-рок', active: false},
+                {name: 'Рок', active: false},
+                {name: 'Прогрессивный рок', active: false},
+                {name: 'Электронная музыка', active: false},
+                {name: 'Классическая музыка', active: false},
+                {name: 'Звуки природы и шум города', active: false},
+              ]
+            each btn in playlistBtns
+              .playlists__slide.swiper-slide
+                if btn.active
+                  button.playlists__slide-btn.btn.playlists__slide-btn--active(type='button')= btn.name
+                else
+                  button.playlists__slide-btn.btn(type='button')= btn.name
+        .playlists__text-wrapper
+          p.playlists__paragraph
+            | Раздел «Плейлисты» может содержать информацию, не предназначенную для
+            | несовершеннолетних
+          span.playlists__copyright-text © 2021 l W-Wave
+          span.playlists__age 18+
+      ul.playlists__right
+        -
+          const playlists = [
+            {
+              srcImg1: 'img/playlist-one-small-tablet.webp',
+              srcImg2: 'img/playlist-one-tablet.webp',
+              img: 'img/playlist-one.webp',
+              alt: 'Группа Ploho',
+              author: 'Ploho',
+              content: '3 последних альбома',
+              lang: 'rus',
+            },
+            {
+              srcImg1: 'img/playlist-two-small-tablet.webp',
+              srcImg2: 'img/playlist-two-tablet.webp',
+              img: 'img/playlist-two.webp',
+              alt: 'Группа Molchat Doma',
+              author: 'Molchat Doma',
+              content: 'Все песни',
+              lang: 'rus',
+            },
+            {
+              srcImg1: 'img/playlist-three-small-tablet.webp',
+              srcImg2: 'img/playlist-three-tablet.webp',
+              img: 'img/playlist-three.webp',
+              alt: 'Группа Motorama',
+              author: 'Motorama',
+              content: 'Все синглы',
+              lang: 'rus',
+            },
+            {
+              srcImg1: 'img/playlist-four-small-tablet.webp',
+              srcImg2: 'img/playlist-four-tablet.webp',
+              img: 'img/playlist-four.webp',
+              alt: 'Группа Human Tetris',
+              author: 'Human Tetris',
+              content: '3 последних альбома',
+              lang: 'rus',
+            },
+            {
+              srcImg1: 'img/playlist-five-small-tablet.webp',
+              srcImg2: 'img/playlist-five-tablet.webp',
+              img: 'img/playlist-five.webp',
+              alt: 'Группа Буерак',
+              author: 'Буерак',
+              content: 'Все EP',
+              lang: 'rus',
+            },
+            {
+              srcImg1: 'img/playlist-six-small-tablet.webp',
+              srcImg2: 'img/playlist-six-tablet.webp',
+              img: 'img/playlist-six.webp',
+              alt: 'Группа Июльские Дни',
+              author: 'Июльские Дни',
+              content: 'Альбом «Колокол»',
+              lang: 'rus',
+            },
+            {
+              srcImg1: 'img/playlist-seven-small-tablet.webp',
+              srcImg2: 'img/playlist-seven-tablet.webp',
+              img: 'img/playlist-seven.webp',
+              alt: 'Группа Joy Division',
+              author: 'Joy Division',
+              content: 'Лучшее за всё время',
+              lang: 'eng',
+            },
+            {
+              srcImg1: 'img/playlist-eight-small-tablet.webp',
+              srcImg2: 'img/playlist-eight-tablet.webp',
+              img: 'img/playlist-eight.webp',
+              alt: 'Группа The Cure',
+              author: 'The Cure',
+              content: 'Лучшее за всё время',
+              lang: 'eng',
+            },
+            {
+              srcImg1: 'img/playlist-nine-small-tablet.webp',
+              srcImg2: 'img/playlist-nine-tablet.webp',
+              img: 'img/playlist-nine.webp',
+              alt: 'Группа The Smiths',
+              author: 'The Smiths',
+              content: 'Период 1984–1988',
+              lang: 'eng',
+            },
+            {
+              srcImg1: 'img/playlist-ten-small-tablet.webp',
+              srcImg2: 'img/playlist-ten-tablet.webp',
+              img: 'img/playlist-ten.webp',
+              alt: 'Группа New Order',
+              author: 'New Order',
+              content: 'Хиты',
+              lang: 'eng',
+            },
+            {
+              srcImg1: 'img/playlist-eleven-small-tablet.webp',
+              srcImg2: 'img/playlist-eleven-tablet.webp',
+              img: 'img/playlist-eleven.webp',
+              alt: 'Группа Bauhaus',
+              author: 'Bauhaus',
+              content: 'Все синглы',
+              lang: 'eng',
+            },
+            {
+              srcImg1: 'img/playlist-twelve-small-tablet.webp',
+              srcImg2: 'img/playlist-twelve-tablet.webp',
+              img: 'img/playlist-twelve.webp',
+              alt: 'Группа Gang Of Four',
+              author: 'Gang Of Four',
+              content: '3 последних альбома',
+              lang: 'eng',
+            },
+          ]
+        each playlist in playlists
+          +playlist(playlist.srcImg1, playlist.srcImg2, playlist.img, playlist.alt, playlist.author, playlist.content, playlist.lang)
+      .playlists__tablet-text-wrapper
+        p.playlists__paragraph
+          | Раздел «Плейлисты» может содержать информацию, не предназначенную для
+          | несовершеннолетних
+        span.playlists__copyright-text © 2021 l W-Wave
+        span.playlists__age 18+

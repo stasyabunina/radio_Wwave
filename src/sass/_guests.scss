@@ -16,9 +16,9 @@
   }
 
   &__desc {
-    max-width: 825px;
     margin: 0;
     margin-bottom: 50px;
+    max-width: 825px;
     font-weight: 400;
     color: $dark_gray;
   }
@@ -30,11 +30,11 @@
   }
 
   &__ac-container {
-    width: 100%;
+    list-style-type: none;
     margin: 0;
     margin-right: 34px;
     padding: 0;
-    list-style-type: none;
+    width: 100%;
   }
 
   &__ac {
@@ -44,16 +44,14 @@
     border-top: 1px solid transparent;
     border-bottom: 1px solid $dark_gray;
     background-color: transparent;
-  }
 
-  &__ac {
     &:first-child {
       border-top: 1px solid $dark_gray;
     }
 
     &.is-active .guests__ac-trigger {
-      border-bottom: 1px solid $dark_gray;
       border-color: $light_blue;
+      border-bottom: 1px solid $dark_gray;
     }
 
     &.is-active .guests__ac-svg {
@@ -65,34 +63,34 @@
     }
 
     .guests__ac-trigger {
-      padding: 23px 0 23px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 23px 0;
       transition: background-color .2s ease-in-out;
     }
   }
 
   &__ac-name {
-    color: $white;
     font-weight: 500;
     font-size: $fs;
     line-height: $lh;
+    color: $white;
     transition: color .2s ease-in-out;
   }
 
   &__ac-bottom-wrapper {
-    padding: 30px 0 30px 0;
+    padding: 30px 0;
   }
 
   &__ac-list {
-    max-width: 100%;
+    display: flex;
+    column-gap: 34px;
+    flex-wrap: wrap;
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 34px;
+    max-width: 100%;
   }
 
   &__ac-item {
@@ -106,8 +104,8 @@
 
   &__ac-trigger {
     &:focus-visible {
-      background-color: $light_black;
       outline: none;
+      background-color: $light_black;
     }
 
     &:focus-visible .guests__ac-svg circle {
@@ -123,8 +121,8 @@
     }
 
     &:active .guests__ac-svg-circle {
-      stroke: $light_blue;
       fill: $light_blue;
+      stroke: $light_blue;
     }
   }
 
@@ -142,10 +140,10 @@
   }
 
   &__ac-item-btn {
-    color: $white;
-    font-size: $small_fs;
     font-weight: 400;
+    font-size: $small_fs;
     line-height: $small_lh;
+    color: $white;
 
     &:focus-visible {
       outline: 2px solid $blue;
@@ -158,8 +156,8 @@
   }
 
   &__tabs {
-    max-width: 350px;
     flex-shrink: 0;
+    max-width: 350px;
   }
 
   &__tab {
@@ -188,12 +186,12 @@
   }
 
   &__socials {
-    margin: 0;
-    margin-bottom: 11px;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+    margin: 0;
+    margin-bottom: 11px;
+    padding: 0;
   }
 
   &__socials-item {
@@ -231,42 +229,42 @@
   &__name {
     margin: 0;
     margin-bottom: 8px;
-    color: $white;
-    font-size: $fs;
     font-weight: 500;
+    font-size: $fs;
     line-height: $lh;
+    color: $white;
   }
 
   &__desc {
     margin: 0;
     margin-bottom: $margin;
-    font-size: $small_fs;
     font-weight: 400;
+    font-size: $small_fs;
     line-height: 29px;
     color: $dark_gray;
   }
 
   &__btn {
-    padding: 10px 19px;
-    color: $light_blue;
     border: $light_blue 2px solid;
     border-radius: $big_border_radius;
-    font-size: $small_fs;
+    padding: 10px 19px;
     font-weight: 500;
+    font-size: $small_fs;
     line-height: $small_lh;
+    color: $light_blue;
     transition: background-color .2s ease-in-out, color .2s ease-in-out, border-color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $blue;
+      outline: none;
       border-color: $blue;
       color: $white;
-      outline: none;
+      background-color: $blue;
     }
 
     &:active {
-      background-color: $dark_blue;
       border-color: $dark_blue;
       color: $white;
+      background-color: $dark_blue;
     }
   }
 }
@@ -276,9 +274,9 @@
   height: 24px;
 }
 
-@media (max-width: 1280px) {
+@media (width <= 1280px) {
   .guests {
-    padding: 94px 0 97px 0;
+    padding: 94px 0 97px;
 
     &__desc {
       max-width: 536px;
@@ -316,9 +314,9 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (width <= 1023px) {
   .guests {
-    padding: 98px 0 94px 0;
+    padding: 98px 0 94px;
 
     &__ac-tabs-wrapper {
       display: flex;
@@ -333,7 +331,7 @@
     }
 
     &__ac-bottom-wrapper {
-      padding: 29px 0 31px 0;
+      padding: 29px 0 31px;
     }
 
     &__ac-item {
@@ -343,8 +341,8 @@
     }
 
     &__tabs {
-      max-width: none;
       flex-shrink: 1;
+      max-width: none;
     }
   }
 
@@ -359,7 +357,7 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
   .guests {
     &__desc {
       font-size: $smaller_fs;
@@ -373,7 +371,7 @@
     }
 
     &__ac-bottom-wrapper {
-      padding: 20px 0 22px 0;
+      padding: 20px 0 22px;
     }
 
     &__ac-list {
@@ -395,9 +393,9 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .guests {
-    padding: 56px 0 55px 0;
+    padding: 56px 0 55px;
 
     &__title {
       font-size: $small_title_fs;
@@ -430,9 +428,9 @@
     }
 
     &__ac-item-btn {
-      text-align: left;
       font-size: $smaller_fs;
       line-height: 15.4px;
+      text-align: left;
     }
   }
 

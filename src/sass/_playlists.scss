@@ -7,9 +7,9 @@
   }
 
   &__left {
-    max-width: 350px;
-    margin-right: $margin;
     flex-shrink: 0;
+    margin-right: $margin;
+    max-width: 350px;
   }
 
   &__title {
@@ -18,27 +18,25 @@
   }
 
   &__radio-text {
-    margin-bottom: 10px;
     display: block;
-    color: $dark_gray;
-    font-size: $small_fs;
+    margin-bottom: 10px;
     font-weight: 400;
+    font-size: $small_fs;
     line-height: $small_lh;
+    color: $dark_gray;
   }
 
   &__radio-wrapper {
-    margin-bottom: 23px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 23px;
   }
 
   &__label {
-    display: flex;
     position: relative;
+    display: flex;
     align-items: center;
-  }
 
-  &__label {
     &:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -55,33 +53,33 @@
 
   &__input-text {
     display: inline-block;
-    font-size: $fs;
     font-weight: 400;
+    font-size: $fs;
     line-height: $lh;
   }
 
   &__visible-checkbox {
     position: relative;
     display: inline-block;
-    width: 26px;
-    height: 26px;
+    vertical-align: middle;
+    margin-right: 16px;
     border: 2px solid $dark_gray;
     border-radius: 100%;
-    margin-right: 16px;
-    vertical-align: middle;
+    width: 26px;
+    height: 26px;
     transition: border-color .2s ease-in-out, background-color .2s ease-in-out;
 
     &::before {
       content: "";
       position: absolute;
-      top: 50%;
       left: 50%;
+      top: 50%;
       width: 27px;
       height: 27px;
       background-image: url("img/radio-checked.svg");
-      background-repeat: no-repeat;
       background-position: center center;
       background-size: 100% 100%;
+      background-repeat: no-repeat;
       opacity: 0;
       transform: translate(-50%, -50%);
       transition: opacity .2s ease-in-out;
@@ -98,10 +96,10 @@
     }
 
     &:focus-visible+.playlists__visible-checkbox {
-      border-color: $blue;
-      background-color: $gray;
       outline: $blue 2px solid;
       outline-offset: 1px;
+      border-color: $blue;
+      background-color: $gray;
     }
   }
 
@@ -112,46 +110,46 @@
 
   &__paragraph {
     margin: 0;
-    font-size: $small_fs;
     font-weight: 400;
+    font-size: $small_fs;
     line-height: 22px;
     color: $dark_gray;
   }
 
   &__copyright-text {
-    margin-bottom: 6px;
     display: block;
-    color: $dark_gray;
-    font-size: $small_fs;
-    font-style: italic;
+    margin-bottom: 6px;
     font-weight: 300;
+    font-style: italic;
+    font-size: $small_fs;
     line-height: 22px;
+    color: $dark_gray;
   }
 
   &__age {
-    padding: 7px 4px;
+    display: inline-block;
     border: 1px solid $dark_gray;
     border-radius: 100%;
-    display: inline-block;
-    color: $dark_gray;
+    padding: 7px 4px;
     font-family: "OpenSans", sans-serif;
-    font-size: $very_small_fs;
     font-weight: 400;
+    font-size: $very_small_fs;
     line-height: $small_lh;
+    color: $dark_gray;
   }
 
   &__right {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
     margin: 0;
     padding: 0;
     padding-top: 14px;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
   }
 
   &__item {
-    width: calc(25% - 22.5px);
     display: flex;
+    width: calc(25% - 22.5px);
 
     &:not(:nth-child(4n)) {
       margin-right: $margin;
@@ -174,18 +172,18 @@
 .playlist {
   position: relative;
   display: flex;
-  flex-direction: column;
   flex-grow: 1;
+  flex-direction: column;
 
   &__preview {
     display: flex;
   }
 
   &__info {
-    padding: 16px 16px 15px 16px;
+    flex-grow: 1;
     border: solid 1px $light_gray;
     border-top: none;
-    flex-grow: 1;
+    padding: 16px 16px 15px;
     transition: background-color .2s ease-in-out;
   }
 
@@ -199,18 +197,18 @@
     &::before {
       content: '';
       position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
       width: 100%;
       height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 2;
       transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
     }
 
     &:active .playlist__btn-svg {
-      transform: translate(-50%, -50%) scale(1.17);
       opacity: 1;
       visibility: visible;
+      transform: translate(-50%, -50%) scale(1.17);
     }
 
     &:active::before {
@@ -219,8 +217,8 @@
     }
 
     &:active+.playlist__info {
-      background-color: $dark_blue;
       border-color: $dark_blue;
+      background-color: $dark_blue;
     }
 
     &:active+.playlist__info .playlist__name {
@@ -242,8 +240,8 @@
     }
 
     &:focus-visible+.playlist__info {
-      background-color: $light_blue;
       border-color: $light_blue;
+      background-color: $light_blue;
     }
 
     &:focus-visible+.playlist__info .playlist__text {
@@ -253,8 +251,8 @@
 
   &__svg-wrapper {
     position: absolute;
-    top: 0;
     right: 0;
+    top: 0;
     padding: 4px;
     background-color: $black;
 
@@ -265,57 +263,57 @@
 
   &__btn-svg {
     position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
     display: block;
     width: 42px;
     height: 42px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     opacity: 0;
-    z-index: 3;
     visibility: hidden;
+    transform: translate(-50%, -50%);
     transition: opacity .2s ease-in-out, transform .2s ease-in-out;
   }
 
   &__name {
     margin: 0;
     margin-bottom: 4px;
-    font-size: $small_fs;
     font-weight: 500;
+    font-size: $small_fs;
     line-height: $small_lh;
     transition: color .2s ease-in-out;
   }
 
   &__text {
     display: block;
-    font-size: $very_small_fs;
     font-weight: 400;
+    font-size: $very_small_fs;
     line-height: $smallest_lh;
     color: $dark_gray;
     transition: color .2s ease-in-out;
   }
 }
 
-@media (max-width: 1280px) {
+@media (width <= 1280px) {
   .playlists {
-    padding: 94px 0 93px 0;
+    padding: 94px 0 93px;
 
     &__wrapper {
       flex-direction: column;
     }
 
     &__left {
-      max-width: none;
       margin-right: 0;
       margin-bottom: 31px;
+      max-width: none;
     }
 
     &__radio-wrapper {
-      max-height: 168px;
-      width: 100%;
-      margin: 0;
       flex-wrap: wrap;
       align-content: flex-start;
+      margin: 0;
+      width: 100%;
+      max-height: 168px;
     }
 
     &__label {
@@ -339,8 +337,8 @@
     }
 
     &__right {
-      padding-top: 0;
       margin-bottom: 42px;
+      padding-top: 0;
     }
 
     &__item {
@@ -380,17 +378,17 @@
     }
 
     &__info {
-      border-top: solid 1px $light_gray;
-      border-left: none;
-      padding: 0 8px 0 10px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      border-top: solid 1px $light_gray;
+      border-left: none;
+      padding: 0 8px 0 10px;
     }
   }
 }
 
-@media (max-width: 1023px) {
+@media (width <= 1023px) {
   .playlists {
     &__left {
       margin-bottom: 49px;
@@ -430,7 +428,7 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
   .playlists {
     &__radio-wrapper {
       display: none;
@@ -447,27 +445,27 @@
     }
 
     &__slide-btn {
-      padding: 7px 19px;
-      color: $blue;
-      font-size: $small_fs;
-      font-weight: 500;
-      line-height: $small_lh;
       border: solid 2px $blue;
       border-radius: $big_border_radius;
+      padding: 7px 19px;
+      font-weight: 500;
+      font-size: $small_fs;
+      line-height: $small_lh;
       white-space: nowrap;
       text-align: center;
+      color: $blue;
 
       &.playlists__slide-btn--active {
-        background-color: $blue;
         color: $white;
+        background-color: $blue;
       }
     }
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .playlists {
-    padding: 54px 0 52px 0;
+    padding: 54px 0 52px;
 
     &__left {
       margin-bottom: 32px;
@@ -503,19 +501,19 @@
     flex-direction: column;
 
     &__preview {
-      max-width: none;
       width: 100%;
+      max-width: none;
     }
 
     &__img {
-      max-width: none;
       width: 100%;
+      max-width: none;
     }
 
     &__info {
-      padding: 10px 8px 10px 10px;
-      border-left: solid 1px $light_gray;
       border-top: none;
+      border-left: solid 1px $light_gray;
+      padding: 10px 8px 10px 10px;
     }
 
     &__name {

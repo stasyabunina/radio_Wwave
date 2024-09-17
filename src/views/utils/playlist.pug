@@ -1,0 +1,26 @@
+mixin playlist(srcImg1, srcImg2, img, alt, author, content, lang)
+   li.playlists__item
+      article.playlists__card.playlist
+        button.playlist__btn.btn(aria-label='Воспроизвести')
+          picture.playlist__preview
+            source(srcset=srcImg1 media='(max-width: 750px)')
+            source(srcset=srcImg2 media='(max-width: 1280px)')
+            img.playlist__img(src=img alt=alt)
+          svg.playlist__btn-svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+            circle(cx='24' cy='24' r='21' fill='#6D31EE')
+            path(d='M21.6924 31.7965L31.5716 24.7996C32.1428 24.3998 32.1428 23.6002 31.5716 23.2004L21.6924 16.2035C20.9943 15.7037 20 16.1835 20 17.0031V30.9969C20 31.8165 20.9943 32.2963 21.6924 31.7965Z' fill='white')
+        .playlist__info
+          h3.playlist__name= author
+          span.playlist__text= content
+        .playlist__svg-wrapper
+          if lang === 'rus'
+            svg(width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(fill-rule='evenodd' clip-rule='evenodd' d='M0 0H16V12H0V0Z' fill='white')
+              path(fill-rule='evenodd' clip-rule='evenodd' d='M0 4H16V12H0V4Z' fill='#0039A6')
+              path(fill-rule='evenodd' clip-rule='evenodd' d='M0 8H16V12H0V8Z' fill='#D52B1E')
+          else if lang === 'eng'
+            svg(width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M-4 0H19.8217V12H-4V0Z' fill='#0039A6')
+              path(d='M-4 0V1.34063L17.158 12H19.8217V10.6594L-1.33635 0H-4ZM19.8217 0V1.34063L-1.33635 12H-4V10.6594L17.158 0H19.8217Z' fill='white')
+              path(d='M5.92646 0V12H9.89519V0H5.92646ZM-4 4.00078V7.99922H19.8217V4.00078H-4Z' fill='white')
+              path(d='M-4 4.8V7.2H19.8217V4.8H-4ZM6.71974 0V12H9.10191V0H6.71974ZM-4 12L3.93977 7.99922H5.71709L-2.22501 12H-4ZM-4 0L3.93977 4.00078H2.16478L-4 0.895313V0ZM10.1069 4.00078L18.0467 0H19.8217L11.8819 4.00078H10.1069ZM19.8217 12L11.8819 7.99922H13.6569L19.8217 11.1047V12Z' fill='#D52B1E')

@@ -8,8 +8,8 @@
   }
 
   &__item {
-    width: calc(50% - 15px);
     display: flex;
+    width: calc(50% - 15px);
 
     &:nth-child(2n+1) {
       margin-right: $margin;
@@ -29,35 +29,35 @@
   }
 
   &__list {
-    margin: 0;
-    padding: 0;
-    margin-bottom: 29px;
-    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 29px;
+    padding: 0;
   }
 
   &__btn {
     margin: 0 auto;
-    padding: 23px 54px 24px 54px;
-    color: $blue;
     border: 2px solid $blue;
     border-radius: $border_radius;
-    line-height: $lh;
+    padding: 23px 54px 24px;
     font-weight: 500;
+    line-height: $lh;
+    color: $blue;
     transition: background-color .2s ease-in-out, color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $light_blue;
-      color: $white;
-      border-color: $blue;
       outline: none;
+      border-color: $blue;
+      color: $white;
+      background-color: $light_blue;
     }
 
     &:active {
-      background-color: $dark_blue;
-      color: $white;
       border-color: $dark_blue;
+      color: $white;
+      background-color: $dark_blue;
     }
 
     &.podcasts__btn--hidden {
@@ -69,21 +69,20 @@
 .podcast {
   position: relative;
   display: flex;
-  position: relative;
-  background-color: $white;
   flex-grow: 1;
+  background-color: $white;
 
   &__wrapper {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
   }
 
   &__info-btn-wrapper {
-    padding: 21px 31px 0 30px;
     display: flex;
     justify-content: space-between;
+    padding: 21px 31px 0 30px;
   }
 
   &__info {
@@ -100,13 +99,13 @@
   }
 
   &__actions {
-    margin: 0;
-    padding: 0;
-    padding-left: 30px;
-    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
     border-top: 1px solid $light_gray;
+    padding: 0;
+    padding-left: 30px;
   }
 
   &__action {
@@ -116,8 +115,8 @@
   }
 
   &__length {
-    margin-bottom: 9px;
     display: block;
+    margin-bottom: 9px;
     font-weight: 400;
     font-size: $very_small_fs;
     line-height: $smallest_lh;
@@ -145,21 +144,21 @@
 
   &__text {
     font-weight: 400;
-    color: $dark_gray;
     font-size: $small_fs;
     line-height: $small_lh;
+    color: $dark_gray;
   }
 
   &__btn {
+    align-self: center;
     width: 48px;
     height: 48px;
-    align-self: center;
 
     &::before {
       content: '';
       position: absolute;
-      top: 0;
       left: 0;
+      top: 0;
       width: 100%;
       height: 100%;
     }
@@ -173,8 +172,8 @@
     }
 
     &:active .podcast__btn-svg circle {
-      stroke: $dark_blue;
       fill: $dark_blue;
+      stroke: $dark_blue;
     }
 
     &:focus-visible .podcast__btn-svg path {
@@ -222,17 +221,17 @@
 
   &__time {
     position: absolute;
-    padding: 4px 7px 7px 10px;
-    bottom: -3px;
     left: -1px;
-    background-color: $light_gray;
+    bottom: -3px;
+    padding: 4px 7px 7px 10px;
+    font-weight: 400;
     font-size: 10px;
     line-height: 10px;
-    font-weight: 400;
+    background-color: $light_gray;
   }
 }
 
-@media (max-width: 1280px) {
+@media (width <= 1280px) {
   .podcast {
     &__info-btn-wrapper {
       padding: 23px 31px 0 30px;
@@ -240,11 +239,11 @@
   }
 
   .podcasts {
-    padding: 94px 0 93px 0;
+    padding: 94px 0 93px;
   }
 }
 
-@media (max-width: 1023px) {
+@media (width <= 1023px) {
   .podcasts {
     padding: 96px 0;
 
@@ -266,7 +265,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .podcasts {
     padding: 54px 0;
 
@@ -301,13 +300,13 @@
     flex-direction: column;
 
     &__info-btn-wrapper {
-      padding: 15px 16px 16px 16px;
       align-items: center;
+      padding: 15px 16px 16px;
     }
 
     &__img {
-      max-width: none;
       width: 100%;
+      max-width: none;
     }
 
     &__title {
@@ -325,11 +324,6 @@
       line-height: $smallest_lh;
     }
 
-    &__btn {
-      width: 36px;
-      height: 36px;
-    }
-
     &__actions {
       padding: 6px 0 7px 34px;
     }
@@ -344,15 +338,17 @@
     }
 
     &__time {
-      padding: 4px 8px 2px 9px;
-      bottom: auto;
       top: -1px;
+      bottom: auto;
+      padding: 4px 8px 2px 9px;
     }
 
     &__btn {
       padding: 16px 29px;
-      line-height: $small_lh;
+      width: 36px;
+      height: 36px;
       font-size: $small_fs;
+      line-height: $small_lh;
 
       svg {
         width: 36px;

@@ -1,0 +1,89 @@
+include ../utils/aboutSlide
+
+section#about.about
+  .container
+    .about__text-wrapper
+      h2.about__title.section-title О нас
+      p.about__text Приём-приём! Как слышно? Мы уже в эфире? Отлично, поехали!
+      p.about__text
+        | Друзья, мы будем очень рады, если вы поможете стать нам лучше. Нам важен
+        | каждый
+        | слушатель, поэтому вы можете поделиться обратной связью о наших предеачах, темах, подборках
+        | и вообще обо всём! Это можно сделать либо написав нам в форме ниже, либо кликнув на наши
+        | соцсети в подвале сайта. Спасибо! Услышимся!:)
+    .about__slider-wrapper
+      button.about__slider-btn.btn.about__slider-btn--prev(aria-label='К предыдущему слайду')
+        svg(width='42' height='42' viewBox='0 0 42 42' fill='none' xmlns='http://www.w3.org/2000/svg')
+          circle(cx='21' cy='21' r='20' transform='matrix(4.37114e-08 -1 -1 -4.37114e-08 42 42)' stroke='#A1A6B4' stroke-width='2')
+          path(d='M23 29L15 21L23 13' stroke='#A1A6B4' stroke-width='2' stroke-linecap='square')
+      .about__swiper.swiper-container
+        .about__swiper-wrapper.swiper-wrapper
+          -
+            const aboutSlides = [
+              {
+                srcImg1: 'img/about-one-mobile.webp',
+                srcImg2: 'img/about-one.webp',
+                srcImg3: 'img/about-one-tablet.webp',
+                img: 'img/about-one.webp',
+                name: 'Дмитрий Гутенберг',
+                desc: 'Эксперт (ну, почти) по всем вопросам (почти)',
+              },
+              {
+                srcImg1: 'img/about-two-mobile.webp',
+                srcImg2: 'img/about-two.webp',
+                srcImg3: 'img/about-two-tablet.webp',
+                img: 'img/about-two.webp',
+                name: 'Анна Васильева',
+                desc: 'Как я здесь оказалась? А главное — зачем?',
+              },
+              {
+                srcImg1: 'img/about-three-mobile.webp',
+                srcImg2: 'img/about-three.webp',
+                srcImg3: 'img/about-three-tablet.webp',
+                img: 'img/about-three.webp',
+                name: 'Пётр Дмитриевский',
+                desc: 'Господа! Внимание! Благодарю за внимание!',
+              },
+              {
+                srcImg1: 'img/about-four-mobile.webp',
+                srcImg2: 'img/about-four.webp',
+                srcImg3: 'img/about-four-tablet.webp',
+                img: 'img/about-four.webp',
+                name: 'Татьяна Флеганова',
+                desc: 'Одна я в пальто стою красивая, а вокруг...',
+              },
+              {
+                srcImg1: 'img/about-five-mobile.webp',
+                srcImg2: 'img/about-five.webp',
+                srcImg3: 'img/about-five-tablet.webp',
+                img: 'img/about-five.webp',
+                name: 'Фёдор Прокопьев',
+                desc: 'Привет! Я фотограф, музыкант, ведущий',
+              },
+              {
+                srcImg1: 'img/about-six-mobile.webp',
+                srcImg2: 'img/about-six.webp',
+                srcImg3: 'img/about-six-tablet.webp',
+                img: 'img/about-six.webp',
+                name: 'Светлана Кортнева',
+                desc: 'Художник-оформитель. Оформляю',
+              },
+            ]
+          each aboutSlide in aboutSlides
+            +aboutSlide(aboutSlide.srcImg1, aboutSlide.srcImg2, aboutSlide.srcImg3, aboutSlide.img, aboutSlide.name, aboutSlide.desc)
+      button.about__slider-btn.btn.about__slider-btn--next(aria-label='К следующему слайду')
+        svg(width='42' height='42' viewBox='0 0 42 42' fill='none' xmlns='http://www.w3.org/2000/svg')
+          circle(cx='21' cy='21' r='20' transform='rotate(-90 21 21)' stroke='#A1A6B4' stroke-width='2')
+          path(d='M19 29L27 21L19 13' stroke='#A1A6B4' stroke-width='2' stroke-linecap='square')
+    form.about__form(action='/' method='post')
+      label.about__label.about__textarea-label
+        textarea.about__input.about__textarea(name='Что скажете?' placeholder='Что скажете?')
+      label.about__label.about__name-label
+        input#name.about__input.about__name-input(type='text' name='Имя' placeholder='Имя' data-validate-field='name')
+      label.about__label.about__email-label
+        input#email.about__input.about__email-input(type='email' name='Email' placeholder='Email' data-validate-field='mail')
+      button.about__btn.btn(type='submit') Отправить
+      label.about__checkbox-label
+        input#agree.about__checkbox.visually-hidden(type='checkbox' name='privacy')
+        span.about__visible-checkbox
+        span.about__checkbox-text Согласен на обработку персональных данных

@@ -1,0 +1,9 @@
+mixin aboutSlide(srcImg1, srcImg2, srcImg3, img, name, desc)
+  .about__slide.swiper-slide
+    picture.about__slide-preview
+      source(srcset=srcImg1 media='(max-width: 576px)')
+      source(srcset=srcImg2 media='(max-width: 1023px)')
+      source(srcset=srcImg3 media='(max-width: 1280px)')
+      img.about__img(src=img alt=name)
+    h2.about__slide-name= name
+    p.about__slide-desc= desc

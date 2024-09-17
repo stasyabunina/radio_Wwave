@@ -1,24 +1,24 @@
-import Search from './Search';
+import Search from './Search.js';
 
 export default class Header {
   constructor(element) {
     this.element = element;
 
-    this.init()
+    this.init();
   }
 
   bindToDOM() {
     this.primaryBtn = this.element.querySelectorAll('.primary-broadcast__button');
     this.secondaryBtn = this.element.querySelectorAll('.secondary-broadcast__button');
     this.broadcastBtn = this.element.querySelectorAll('.header__broadcast-btn');
-    this.search = this.element.querySelector('.search');
+    this.searchEl = this.element.querySelector('.search');
   }
 
   init() {
     this.bindToDOM();
     this.addEventListeners();
 
-    new Search(this.search);
+    this.search = new Search(this.searchEl);
   }
 
   addEventListeners() {

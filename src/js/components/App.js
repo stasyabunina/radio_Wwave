@@ -1,9 +1,9 @@
-import Burger from './Burger';
-import Header from './Header';
-import PodcastController from './PodcastController';
-import Tabs from './Tabs';
-import Modal from './Modal';
-import FormValidator from './FormValidator';
+import Burger from './Burger.js';
+import Header from './Header.js';
+import PodcastController from './PodcastController.js';
+import Tabs from './Tabs.js';
+import Modal from './Modal.js';
+import FormValidator from './FormValidator.js';
 
 export default class App {
   constructor(element) {
@@ -11,17 +11,17 @@ export default class App {
   }
 
   bindToDOM() {
-    this.accordion = this.element.querySelector('.accordion-container');
-    this.guestsAccordion = this.element.querySelector('.guests__ac-container');
-    this.header = this.element.querySelector('.header');
-    this.burger = this.header.querySelector('.burger');
-    this.burgerMenu = this.header.querySelector('.header__nav-wrapper');
+    this.accordionEl = this.element.querySelector('.accordion-container');
+    this.guestsAccordionEl = this.element.querySelector('.guests__ac-container');
+    this.headerEl = this.element.querySelector('.header');
+    this.burgerEl = this.headerEl.querySelector('.burger');
+    this.burgerMenu = this.headerEl.querySelector('.header__nav-wrapper');
     this.podcastsSection = this.element.querySelector('.podcasts');
-    this.playlistsSwiper = this.element.querySelector('.playlists__swiper');
-    this.aboutSwiper = this.element.querySelector('.about__swiper');
+    this.playlistsSwiperEl = this.element.querySelector('.playlists__swiper');
+    this.aboutSwiperEl = this.element.querySelector('.about__swiper');
     this.guestsSection = this.element.querySelector('.guests');
-    this.modal = this.element.querySelector('.pop-up');
-    this.modalOpenBtn = this.header.querySelector('.header__desktop-btn');
+    this.modalEl = this.element.querySelector('.pop-up');
+    this.modalOpenBtn = this.headerEl.querySelector('.header__desktop-btn');
     this.aboutForm = this.element.querySelector('.about__form');
     this.broadcastSelect = this.element.querySelector('.broadcasts__select');
   }
@@ -29,32 +29,32 @@ export default class App {
   init() {
     this.bindToDOM();
 
-    new Accordion(this.accordion, {
+    this.accordion = new Accordion(this.accordionEl, {
       duration: 400,
     });
-    new Accordion(this.guestsAccordion, {
+    this.guestsAccordion = new Accordion(this.guestsAccordionEl, {
       duration: 400,
       openOnInit: [0],
     });
 
-    new Burger(this.burger, this.burgerMenu);
+    this.burger = new Burger(this.burgerEl, this.burgerMenu);
 
-    new Header(this.header);
+    this.header = new Header(this.headerEl);
 
-    new PodcastController(this.podcastsSection);
+    this.podcast = new PodcastController(this.podcastsSection);
 
-    new Swiper(this.playlistsSwiper, {
+    this.playlistsSwiper = new Swiper(this.playlistsSwiperEl, {
       slidesPerView: 'auto',
       grabCursor: true,
       spaceBetween: 16,
     });
-    new Swiper(this.aboutSwiper, {
+    this.aboutSwiper = new Swiper(this.aboutSwiperEl, {
       slidesPerView: 4,
       grabCursor: true,
       spaceBetween: 30,
       breakpoints: {
         1281: {
-          slidesPerView: 4
+          slidesPerView: 4,
         },
         577: {
           slidesPerView: 2,
@@ -75,13 +75,13 @@ export default class App {
       },
     });
 
-    new Tabs(this.guestsSection);
+    this.tabs = new Tabs(this.guestsSection);
 
-    new Modal(this.modal, this.modalOpenBtn);
+    this.modal = new Modal(this.modalEl, this.modalOpenBtn);
 
     this.formValidator();
 
-    new Choices(this.broadcastSelect, {
+    this.choices = new Choices(this.broadcastSelect, {
       searchEnabled: false,
       itemSelectText: '',
       allowHTML: true,
@@ -119,8 +119,8 @@ export default class App {
             rule: 'customRegexp',
             value: '^[a-zA-Zа-яА-Я -]+$',
             errorMessage: 'Недопустимый формат',
-          },
-        ]
+          }
+        ],
       },
       {
         id: '#email', rules: [
@@ -131,23 +131,23 @@ export default class App {
           {
             rule: 'email',
             errorMessage: 'Пожалуйста, введите действительный e-mail',
-          },
-        ]
+          }
+        ],
       },
       {
         id: '#agree', rules: [
           {
             rule: 'required',
             errorMessage: 'Обязательное согласие',
-          },
-        ]
-      },
+          }
+        ],
+      }
     ];
 
     const onSuccess = () => {
       this.aboutForm.reset();
     };
 
-    new FormValidator(this.aboutForm, options, fields, onSuccess)
+    this.aboutValidator = new FormValidator(this.aboutForm, options, fields, onSuccess);
   }
 }

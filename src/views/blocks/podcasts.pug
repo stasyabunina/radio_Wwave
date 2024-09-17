@@ -1,0 +1,156 @@
+include ../utils/podcast
+
+section#podcasts.podcasts
+  .container
+    h2.podcasts__title.section-title Подкасты
+    ul.podcasts__list
+      -
+        const podcasts = [
+          {
+            srcImg: 'img/podcast-one-mobile.webp',
+            img: 'img/podcast-one.webp',
+            alt: 'Строения Европы',
+            length: '15:43',
+            title: 'Европа. XIX век',
+            author: 'Дмитрий Гутенберг',
+            plays: '258',
+            likes: '104',
+            date: '68',
+            reposts: '14 июня'
+          },
+          {
+            srcImg: 'img/podcast-two-mobile.webp',
+            img: 'img/podcast-two.webp',
+            alt: 'Человек со скрипкой',
+            length: '5:32',
+            title: 'О музыке',
+            author: 'Дмитрий Гутенберг',
+            plays: '207',
+            likes: '34',
+            date: '18',
+            reposts: '11 июня'
+          },
+          {
+            srcImg: 'img/podcast-three-mobile.webp',
+            img: 'img/podcast-three.webp',
+            alt: 'Масса людей',
+            length: '8:54',
+            title: 'Люди сегодня',
+            author: 'Анна Васильева',
+            plays: '104',
+            likes: '54',
+            date: '42',
+            reposts: '8 июня'
+          },
+          {
+            srcImg: 'img/podcast-four-mobile.webp',
+            img: 'img/podcast-four.webp',
+            alt: 'Работающий человек на поле',
+            length: '9:04',
+            title: 'Хэллоу, Африка!',
+            author: 'Пётр Дмитриевский',
+            plays: '87',
+            likes: '44',
+            date: '5',
+            reposts: '5 июня'
+          },
+          {
+            srcImg: 'img/podcast-one-mobile.webp',
+            img: 'img/podcast-five.webp',
+            alt: 'Статуя человека',
+            length: '7:03',
+            title: 'Обо всём',
+            author: 'Пётр Дмитриевский',
+            plays: '64',
+            likes: '30',
+            date: '8',
+            reposts: '2 июня'
+          },
+          {
+            srcImg: 'img/podcast-one-mobile.webp',
+            img: 'img/podcast-six.webp',
+            alt: 'Нарисованная палитра цветов',
+            length: '9:15',
+            title: 'Физика цвета',
+            author: 'Татьяна Флеганова',
+            plays: '58',
+            likes: '29',
+            date: '14',
+            reposts: '28 мая'
+          },
+          {
+            srcImg: 'img/podcast-one-mobile.webp',
+            img: 'img/podcast-seven.webp',
+            alt: 'Источник звука',
+            length: '16:04',
+            title: 'Источник звука',
+            author: 'Пётр Дмитриевский',
+            plays: '55',
+            likes: '20',
+            date: '12',
+            reposts: '22 мая'
+          },
+          {
+            srcImg: 'img/podcast-one-mobile.webp',
+            img: 'img/podcast-eight.webp',
+            alt: 'Сидящие за столом люди',
+            length: '6:55',
+            title: 'Правила этикета',
+            author: 'Татьяна Флеганова',
+            plays: '24',
+            likes: '54',
+            date: '42',
+            reposts: '18 мая'
+          },
+          {
+            srcImg: 'img/podcast-one-mobile.webp',
+            img: 'img/podcast-eight.webp',
+            alt: 'Сидящие за столом люди',
+            length: '6:55',
+            title: 'Правила этикета',
+            author: 'Татьяна Флеганова',
+            plays: '24',
+            likes: '54',
+            date: '42',
+            reposts: '18 мая'
+          },
+          {
+            srcImg: 'img/podcast-one-mobile.webp',
+            img: 'img/podcast-eight.webp',
+            alt: 'Сидящие за столом люди',
+            length: '6:55',
+            title: 'Правила этикета',
+            author: 'Татьяна Флеганова',
+            plays: '24',
+            likes: '54',
+            date: '42',
+            reposts: '18 мая'
+          },
+          {
+            srcImg: 'img/podcast-one-mobile.webp',
+            img: 'img/podcast-eight.webp',
+            alt: 'Сидящие за столом люди',
+            length: '6:55',
+            title: 'Правила этикета',
+            author: 'Татьяна Флеганова',
+            plays: '24',
+            likes: '54',
+            date: '42',
+            reposts: '18 мая'
+          },
+          {
+            srcImg: 'img/podcast-one-mobile.webp',
+            img: 'img/podcast-eight.webp',
+            alt: 'Сидящие за столом люди',
+            length: '6:55',
+            title: 'Правила этикета',
+            author: 'Татьяна Флеганова',
+            plays: '24',
+            likes: '54',
+            date: '42',
+            reposts: '18 мая'
+          }
+        ]
+      each podcast in podcasts
+        +podcast(podcast.srcImg, podcast.img, podcast.alt, podcast.length, podcast.title, podcast.author, podcast.plays, podcast.likes, podcast.reposts, podcast.date)
+    button.podcasts__btn.btn(type='button') Ещё подкасты

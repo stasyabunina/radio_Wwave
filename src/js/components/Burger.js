@@ -3,7 +3,7 @@ export default class Burger {
     this.element = element;
     this.menu = menu;
 
-    this.init()
+    this.init();
   }
 
   bindToDOM() {
@@ -26,7 +26,7 @@ export default class Burger {
       el.addEventListener('click', () => {
         this.menu.classList.remove('header__nav-wrapper--active');
         document.body.classList.remove('stop-scroll');
-      })
+      });
     });
 
     this.burgerClose.addEventListener('click', () => {

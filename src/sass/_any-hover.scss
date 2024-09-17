@@ -14,15 +14,15 @@
   .header {
     &__tablet-btn {
       &:hover {
-        background-color: $black;
         color: $white;
+        background-color: $black;
       }
     }
 
     &__desktop-btn {
       &:hover {
-        background-color: $black;
         color: $white;
+        background-color: $black;
       }
     }
 
@@ -30,9 +30,7 @@
       &:hover .play-path {
         fill: $blue;
       }
-    }
 
-    &__broadcast-btn {
       &:hover .pause-path {
         fill: $blue;
       }
@@ -94,8 +92,8 @@
   .podcasts {
     &__btn {
       &:hover {
-        background-color: $blue;
         color: $white;
+        background-color: $blue;
       }
     }
   }
@@ -116,28 +114,16 @@
     }
   }
 
-  .broadcast {
-    &:hover .broadcast__img {
-      opacity: 0.7;
-    }
-
-    &__img {
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-  }
-
   .choices__inner:hover {
-    background-color: $dark_white;
     border-color: $dark_white;
+    background-color: $dark_white;
   }
 
   .tab {
     &__btn {
       &:hover {
-        background-color: $light_blue;
         color: $white;
+        background-color: $light_blue;
       }
     }
 
@@ -177,8 +163,8 @@
       }
 
       &:hover+.playlist__info {
-        background-color: $blue;
         border-color: $blue;
+        background-color: $blue;
       }
 
       &:hover+.playlist__info .playlist__name {
@@ -263,6 +249,16 @@
   }
 
   .broadcast {
+    &:hover .broadcast__img {
+      opacity: 0.7;
+    }
+
+    &__img {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
     &__link {
       &:hover .broadcast__more {
         color: $blue;

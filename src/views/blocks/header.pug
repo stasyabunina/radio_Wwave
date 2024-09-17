@@ -1,0 +1,161 @@
+header.header
+  .header__tablet-wrapper
+    .container
+      .header__tablet-top
+        a.header__tablet-logo(href='#')
+          svg.header__svg
+            use(xlink:href='img/sprite.svg#header-logo')
+        .header__tablet-broadcast
+          .header__secondary-broadcast.secondary-broadcast
+            button.secondary-broadcast__button.btn(type='button' aria-label='Воспроизвести')
+              svg.secondary-broadcast__svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path.play-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0ZM8 14.5V5.5L14 10L8 14.5Z' fill='#A1A6B4')
+                path.pause-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0Z' fill='#A1A6B4')
+                rect(x='7' y='6' width='2' height='8' rx='1' fill='white')
+                rect(x='11' y='6' width='2' height='8' rx='1' fill='white')
+            .secondary-broadcast__text-wrapper
+              span.secondary-broadcast__top-text Ранее в эфире
+              span.secondary-broadcast__bottom-text «Музыка»
+          .header__primary-broadcast.primary-broadcast
+            button.primary-broadcast__button.btn(type='button' aria-label='Воспроизвести')
+              svg.primary-broadcast__svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path.play-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0ZM8 14.5V5.5L14 10L8 14.5Z' fill='#A1A6B4')
+                path.pause-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0Z' fill='#A1A6B4')
+                rect(x='7' y='6' width='2' height='8' rx='1' fill='white')
+                rect(x='11' y='6' width='2' height='8' rx='1' fill='white')
+            .primary-broadcast__text-wrapper
+              span.primary-broadcast__top-text Сейчас в эфире
+              span.primary-broadcast__bottom-text «Как так?»
+        button.btn.header__tablet-btn.js-header-btn(type='button') Вход
+  .header__top-wrapper
+    .container
+      .header__top
+        a.header__desktop-logo(href='#')
+          svg.header__svg
+            use(xlink:href='img/sprite.svg#header-logo')
+        button.header__burger.burger.btn(type='button' aria-label='Открыть меню' aria-expanded='false')
+          span.burger__line
+          span.burger__line
+          span.burger__line
+        .header__nav-wrapper
+          nav.nav-top.header__nav-top
+            button.nav-top__close.btn(type='button' aria-label='Закрыть')
+              svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                rect(x='4.5752' y='2.95406' width='24' height='3' rx='1.5' transform='rotate(45 4.5752 2.95406)' fill='#6D31EE')
+                rect(x='21.5459' y='5.07538' width='24' height='3' rx='1.5' transform='rotate(135 21.5459 5.07538)' fill='#6D31EE')
+            ul.nav-top__list
+              li.nav-top__item
+                a.nav-top__link(href='#podcasts') Подкасты
+              li.nav-top__item
+                a.nav-top__link(href='#broadcasts') Передачи
+              li.nav-top__item
+                a.nav-top__link(href='#guests') Гости
+              li.nav-top__item
+                a.nav-top__link(href='#playlists') Плейлисты
+              li.nav-top__item
+                a.nav-top__link(href='#about') О нас
+          nav.nav-top-secondary.header__nav-top-secondary
+            ul.nav-top-secondary__list
+              li.nav-top-secondary__item
+                a.nav-top-secondary__link(href='#') Новости
+              li.nav-top-secondary__item
+                a.nav-top-secondary__link(href='#') Блоги
+              li.nav-top-secondary__item
+                a.nav-top-secondary__link(href='#') Топы
+              li.nav-top-secondary__item
+                a.nav-top-secondary__link(href='#') Опросы
+              li.nav-top-secondary__item
+                a.nav-top-secondary__link(href='#') Рейтинги
+              li.nav-top-secondary__item
+                a.nav-top-secondary__link(href='#') Реклама
+        .header__search-btn-wrapper
+          .header__search.search
+            button.search__btn.btn(type='button' aria-label='Поиск')
+              svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z' stroke='#6D31EE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                path(d='M20.9999 21L16.6499 16.65' stroke='#6D31EE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+            form.search__form(method='get')
+              input.search__input(type='search' placeholder='Поиск по сайту')
+              button.search__submit.btn(type='submit' aria-label='Искать')
+                svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z' stroke='#6D31EE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                  path(d='M21 21L16.65 16.65' stroke='#6D31EE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          button.btn.header__desktop-btn.js-header-btn(type='button') Вход
+  .header__bottom-wrapper
+    .container
+      .header__bottom
+        nav.nav-bottom.header__nav-bottom
+          ul.nav-bottom__list
+            li.nav-bottom__item
+              a.nav-bottom__link(href='#') Новости
+            li.nav-bottom__item
+              a.nav-bottom__link(href='#') Блоги
+            li.nav-bottom__item
+              a.nav-bottom__link(href='#') Топы
+            li.nav-bottom__item
+              a.nav-bottom__link(href='#') Опросы
+            li.nav-bottom__item
+              a.nav-bottom__link(href='#') Рейтинги
+            li.nav-bottom__item
+              a.nav-bottom__link(href='#') Реклама
+        .header__desktop-broadcast
+          .header__secondary-broadcast.secondary-broadcast
+            button.secondary-broadcast__button.btn(type='button' aria-label='Воспроизвести')
+              svg.secondary-broadcast__svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path.play-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0ZM8 14.5V5.5L14 10L8 14.5Z' fill='#A1A6B4')
+                path.pause-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0Z' fill='#A1A6B4')
+                rect(x='7' y='6' width='2' height='8' rx='1' fill='white')
+                rect(x='11' y='6' width='2' height='8' rx='1' fill='white')
+            .secondary-broadcast__text-wrapper
+              span.secondary-broadcast__top-text Ранее в эфире
+              span.secondary-broadcast__bottom-text «Музыка»
+          .header__primary-broadcast.primary-broadcast
+            button.primary-broadcast__button.btn(type='button' aria-label='Воспроизвести')
+              svg.primary-broadcast__svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path.play-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0ZM8 14.5V5.5L14 10L8 14.5Z' fill='#A1A6B4')
+                path.pause-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0Z' fill='#A1A6B4')
+                rect(x='7' y='6' width='2' height='8' rx='1' fill='white')
+                rect(x='11' y='6' width='2' height='8' rx='1' fill='white')
+            .primary-broadcast__text-wrapper
+              span.primary-broadcast__top-text Сейчас в эфире
+              span.primary-broadcast__bottom-text «Как так?»
+        button.header__broadcast-btn.btn(type='button' aria-label='Воспроизвести')
+          svg.header__broadcast-svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path.play-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0ZM8 14.5V5.5L14 10L8 14.5Z' fill='#A1A6B4')
+            path.pause-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0Z' fill='#A1A6B4')
+            rect(x='7' y='6' width='2' height='8' rx='1' fill='white')
+            rect(x='11' y='6' width='2' height='8' rx='1' fill='white')
+        .header__age.age
+          span.age__text 12+
+  .header__mobile-bottom.accordion-container
+    .header__ac.ac
+      .header__ac-trigger.ac-trigger
+        button.btn.header__ac-btn(type='button')
+          svg.header__ac-svg(width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg')
+            circle(cx='7.5' cy='7.5' r='7.5' fill='currentColor')
+            path(d='M12 7.00014V8.00014H3V7.00014H12Z' fill='white')
+            path(d='M8 12.0001H7L7 3.00014L8 3.00014L8 12.0001Z' fill='white')
+        h2.header__ac-header.ac-header
+          | Что в эфире?
+      .ac-panel
+        .header__ac-broadcast
+          .header__secondary-broadcast.secondary-broadcast
+            button.secondary-broadcast__button.btn(type='button' aria-label='Воспроизвести')
+              svg.secondary-broadcast__svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path.play-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0ZM8 14.5V5.5L14 10L8 14.5Z' fill='#A1A6B4')
+                path.pause-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0Z' fill='#A1A6B4')
+                rect(x='7' y='6' width='2' height='8' rx='1' fill='white')
+                rect(x='11' y='6' width='2' height='8' rx='1' fill='white')
+            .secondary-broadcast__text-wrapper
+              span.secondary-broadcast__top-text Ранее в эфире
+              span.secondary-broadcast__bottom-text «Музыка»
+          .header__primary-broadcast.primary-broadcast
+            button.primary-broadcast__button.btn(type='button' aria-label='Воспроизвести')
+              svg.primary-broadcast__svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path.play-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0ZM8 14.5V5.5L14 10L8 14.5Z' fill='#A1A6B4')
+                path.pause-path(d='M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0Z' fill='#A1A6B4')
+                rect(x='7' y='6' width='2' height='8' rx='1' fill='white')
+                rect(x='11' y='6' width='2' height='8' rx='1' fill='white')
+            .primary-broadcast__text-wrapper
+              span.primary-broadcast__top-text Сейчас в эфире
+              span.primary-broadcast__bottom-text «Как так?»

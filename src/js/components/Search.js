@@ -2,7 +2,7 @@ export default class Search {
   constructor(element) {
     this.element = element;
 
-    this.init()
+    this.init();
   }
 
   bindToDOM() {

@@ -1,0 +1,70 @@
+include ../utils/broadcast
+
+section#broadcasts.broadcasts
+  .container
+    .broadcasts__wrapper
+      .broadcasts__left
+        .broadcasts__title-label-wrapper
+          h2.broadcasts__title.section-title Передачи
+          span.broadcasts__author Автор:
+          select.broadcasts__select(name='author')
+            option.broadcasts__option(value='dmitriy gutenberg' selected) Дмитрий Гутенберг
+            option.broadcasts__option(value='tatyana fleganova') Татьяна Флеганова
+            option.broadcasts__option(value='anna vasilieva') Анна Васильева
+            option.broadcasts__option(value='peter dmitrievskiy') Пётр Дмитриевский
+        .broadcasts__archive.archive
+          button.archive__btn.btn Архив
+          p.archive__text В архив попадают все передачи, которые вы пропустили! Enjoy:)
+      ul.broadcasts__right
+        -
+          const broadcasts = [
+            {
+              srcImg: 'img/broadcast-one-mobile.webp',
+              img: 'img/broadcast-one.webp',
+              alt: 'Люди работающие над книгами',
+              title: 'О людях и книгах',
+              desc: 'Анонсируется отдельно',
+            },
+            {
+              srcImg: 'img/broadcast-two-mobile.webp',
+              img: 'img/broadcast-two.webp',
+              alt: 'Человек за печатной машинкой',
+              title: 'Графомания',
+              desc: 'По понедельникам в 10:00',
+            },
+            {
+              srcImg: 'img/broadcast-three-mobile.webp',
+              img: 'img/broadcast-three.webp',
+              alt: 'Здание Рима',
+              title: 'Не Рим, не Троя',
+              desc: 'По вторникам в 12:00',
+            },
+            {
+              srcImg: 'img/broadcast-four-mobile.webp',
+              img: 'img/broadcast-four.webp',
+              alt: 'Эрудит',
+              title: 'Эрудит',
+              desc: 'По пятницам в 17:00',
+            },
+            {
+              srcImg: 'img/broadcast-five-mobile.webp',
+              img: 'img/broadcast-five.webp',
+              alt: 'Произведение искусства',
+              title: 'Тонкости эпох',
+              desc: 'По субботам в 10:00',
+            },
+            {
+              srcImg: 'img/broadcast-six-mobile.webp',
+              img: 'img/broadcast-six.webp',
+              alt: 'Изображение ежа',
+              title: 'Живые мысли',
+              desc: 'По воскресеньям в 15:30',
+            },
+          ]
+        each broadcast in broadcasts
+            +broadcast(broadcast.srcImg, broadcast.img, broadcast.alt, broadcast.title, broadcast.desc)
+  .broadcasts__archive-wrapper
+    .container
+      .broadcasts__archive.tablet-archive
+        button.archive__btn.btn Архив
+        p.archive__text В архив попадают все передачи, которые вы пропустили! Enjoy:)

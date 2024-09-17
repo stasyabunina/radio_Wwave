@@ -1,0 +1,25 @@
+extends layouts/default
+
+block variables
+  - const title = 'W-Wave Radio'
+
+block content
+  #root
+    include blocks/header
+    main.main
+      include blocks/hero
+      include blocks/podcasts
+      include blocks/broadcasts
+      include blocks/guests
+      include blocks/playlists
+      include blocks/product
+      include blocks/about
+      include blocks/footer
+      include blocks/popup
+
+block scripts
+  script(src='libs/accordion.min.js')
+  script(src='libs/choices.min.js')
+  script(src='libs/swiper.min.js')
+  script(src='libs/just-validate.min.js')
+  script(src='js/script.js')

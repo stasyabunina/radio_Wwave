@@ -1,5 +1,5 @@
 .about {
-  padding: 98px 0 86px 0;
+  padding: 98px 0 86px;
   background-color: $black;
 
   &__title {
@@ -9,29 +9,29 @@
   }
 
   &__text-wrapper {
-    margin-bottom: $margin;
     position: relative;
+    margin-bottom: $margin;
 
     &::after {
       content: '';
-      display: block;
       position: absolute;
-      top: 0;
       right: 0;
+      top: 0;
+      display: block;
       width: 445px;
       height: 290px;
-      background-image: url("img/about-deco.png");
-      background-repeat: no-repeat;
-      background-size: 445px 290px;
+      background-image: url("img/about-deco.webp");
       background-position: 100% 0;
+      background-size: 445px 290px;
+      background-repeat: no-repeat;
     }
   }
 
   &__text {
-    max-width: 634px;
     margin: 0;
-    font-size: $fs;
+    max-width: 634px;
     font-weight: 400;
+    font-size: $fs;
     line-height: $biggest_lh;
     color: $dark_gray;
 
@@ -44,18 +44,18 @@
   &__slide-name {
     margin: 0;
     margin-bottom: 8px;
-    color: $white;
-    font-size: $fs;
     font-weight: 500;
+    font-size: $fs;
     line-height: $lh;
+    color: $white;
   }
 
   &__slide-desc {
     margin: 0;
-    color: $dark_gray;
-    font-size: $small_fs;
     font-weight: 400;
+    font-size: $small_fs;
     line-height: $big_lh;
+    color: $dark_gray;
   }
 
   &__form {
@@ -69,28 +69,28 @@
   }
 
   &__input {
-    padding: 24px 31px;
-    color: $white;
-    font-size: $fs;
-    font-weight: 400;
-    line-height: $lh;
     border: solid 1px $white;
     border-radius: $border_radius;
+    padding: 24px 31px;
+    font-weight: 400;
+    font-size: $fs;
+    line-height: $lh;
+    color: $white;
     background-color: transparent;
     transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $light_black;
-      border-color: $light_blue;
       outline: none;
+      border-color: $light_blue;
+      background-color: $light_black;
     }
 
     &::placeholder {
-      color: $dark_gray;
       font-family: inherit;
-      font-size: $fs;
       font-weight: 400;
+      font-size: $fs;
       line-height: $lh;
+      color: $dark_gray;
     }
 
     &.is-invalid {
@@ -103,8 +103,8 @@
   }
 
   &__textarea-label {
-    width: 100%;
     margin-bottom: $margin;
+    width: 100%;
   }
 
   &__checkbox-label {
@@ -116,32 +116,32 @@
   }
 
   &__textarea {
-    min-height: 150px;
-    padding: 30px 32px;
     border-radius: $smaller_border_radius;
+    padding: 30px 32px;
+    min-height: 150px;
     resize: none;
   }
 
   &__name-label {
     display: inline-flex;
-    width: calc(50% - 18px);
     margin-right: $margin;
+    width: calc(50% - 18px);
   }
 
   &__email-label {
     display: inline-flex;
-    width: calc(50% - 18px);
     margin-bottom: $margin;
+    width: calc(50% - 18px);
   }
 
   &__btn {
     margin-bottom: 22px;
-    padding: 25px 54px;
-    color: $white;
-    font-size: $fs;
-    font-weight: 500;
-    line-height: $lh;
     border-radius: $border_radius;
+    padding: 25px 54px;
+    font-weight: 500;
+    font-size: $fs;
+    line-height: $lh;
+    color: $white;
     background-color: $blue;
 
     &:focus-visible {
@@ -164,21 +164,21 @@
   &__visible-checkbox {
     position: relative;
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    vertical-align: middle;
     margin-right: 4px;
     border: 1px solid $white;
-    vertical-align: middle;
+    width: 14px;
+    height: 14px;
 
     &::before {
       content: "";
       position: absolute;
-      top: 50%;
       left: 50%;
+      top: 50%;
+      border-bottom: 2px solid $light_blue;
+      border-left: 2px solid $light_blue;
       width: 7px;
       height: 4px;
-      border-left: 2px solid $light_blue;
-      border-bottom: 2px solid $light_blue;
       opacity: 0;
       transform: translate(-50%, -60%) rotate(-45deg);
       transition: opacity .2s ease-in-out;
@@ -186,11 +186,11 @@
   }
 
   &__checkbox-text {
-    color: $white;
     display: inline-block;
-    font-size: $very_small_fs;
     font-weight: 500;
+    font-size: $very_small_fs;
     line-height: $smallest_lh;
+    color: $white;
   }
 
   &__slider-wrapper {
@@ -199,9 +199,9 @@
   }
 
   &__swiper {
-    width: 100%;
     position: relative;
     overflow: hidden;
+    width: 100%;
   }
 
   &__slide-preview {
@@ -210,10 +210,10 @@
   }
 
   &__slider-btn {
-    width: 42px;
-    height: 42px;
     position: absolute;
     top: 29.5%;
+    width: 42px;
+    height: 42px;
 
     &:focus-visible {
       outline: 2px solid $blue;
@@ -224,10 +224,10 @@
 
 .is-label-invalid {
   position: absolute;
-  top: 9px;
   left: 32px;
-  font-size: $very_small_fs;
+  top: 9px;
   font-weight: 400;
+  font-size: $very_small_fs;
   line-height: $smallest_lh;
 }
 
@@ -239,27 +239,25 @@
   left: -75px;
 }
 
-@media (max-width: 1280px) {
+@media (width <= 1280px) {
   .about {
-    padding: 94px 0 88px 0;
+    padding: 94px 0 88px;
 
     &__text-wrapper {
       &::after {
+        top: 50%;
         width: 255px;
         height: 255px;
-        top: 50%;
-        transform: translateY(-50%);
-        background-image: url("img/about-deco-tablet.png");
-        background-repeat: no-repeat;
+        background-image: url("img/about-deco-tablet.webp");
         background-size: 255px 255px;
+        background-repeat: no-repeat;
+        transform: translateY(-50%);
       }
     }
 
     &__text {
       max-width: 539px;
-    }
 
-    &__text {
       &:first-of-type {
         margin-bottom: 4px;
       }
@@ -287,19 +285,19 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (width <= 1023px) {
   .about {
     &__text-wrapper {
       &::after {
+        position: relative;
+        left: -244px;
+        top: auto;
+        bottom: 0;
         width: 781px;
         height: 112px;
-        position: relative;
-        top: auto;
-        transform: none;
-        left: -244px;
-        bottom: 0;
-        background-image: url("img/about-deco-small-tablet.png");
+        background-image: url("img/about-deco-small-tablet.webp");
         background-size: contain;
+        transform: none;
       }
     }
 
@@ -324,9 +322,9 @@
 
     &__name-label {
       display: flex;
-      width: 100%;
       margin-right: 0;
       margin-bottom: $margin;
+      width: 100%;
     }
 
     &__email-label {
@@ -336,7 +334,7 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
   .about {
     &__slider-btn {
       display: none;
@@ -344,9 +342,9 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .about {
-    padding: 56px 0 47px 0;
+    padding: 56px 0 47px;
 
     &__title {
       font-size: $small_title_fs;
@@ -367,8 +365,8 @@
     }
 
     &__slide-name {
-      max-width: 109px;
       margin-bottom: 4px;
+      max-width: 109px;
       font-size: $smaller_fs;
       line-height: 18px;
     }
@@ -425,13 +423,13 @@
     }
 
     &__slide {
-      max-width: 113px;
       width: auto;
+      max-width: 113px;
     }
   }
 
   .is-label-invalid {
-    top: 4px;
     left: 24px;
+    top: 4px;
   }
 }
